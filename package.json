@@ -1,0 +1,25 @@
+{
+  "name": "simple-ecommerce",
+  "version": "1.0.0",
+  "description": "Projeto didático de e-commerce com Express e EJS",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "testar": "node testes/fluxos.js",
+    "verificar:estrutura": "node testes/verificar-estrutura.js",
+    "popular": "node scripts/popular-catalogo.js",
+    "atualizar:fotos": "node scripts/atualizar-fotos-reais.js",
+    "testar:cupons": "node testes/cupons.js && node testes/cupons-telas.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "i": "^0.3.7",
+    "multer": "^2.4.0",
+    "nodemon": "^3.1.14",
+    "sqlite3": "^6.0.1"
+  }
+}

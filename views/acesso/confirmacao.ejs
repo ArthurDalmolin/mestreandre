@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sua Sacola - Mestre André Store</title>
+  
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Folha de Estilos Externa -->
+  <link rel="stylesheet" href="/css/style_carrinho.css">
+</head>
+<body>
+
+  <!-- ================= TOPO / NAVBAR ================= -->
+  <header class="header">
+    <div class="header-inner container">
+      <a href="/inicial" class="brand">
+        <svg class="brand-symbol" viewBox="0 0 40 32" fill="currentColor">
+          <rect x="0" y="4" width="7" height="24" rx="2" />
+          <rect x="11" y="0" width="7" height="32" rx="2" />
+          <rect x="22" y="6" width="7" height="20" rx="2" />
+          <rect x="33" y="2" width="7" height="28" rx="2" />
+        </svg>
+        <span class="brand-name">Mestre André Store</span>
+      </a>
+
+      <form class="search-box" action="/catalogo" method="get">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+        </svg>
+        <input type="text" name="busca" placeholder="Qual instrumento faz parte da sua história?" aria-label="Pesquisar instrumentos">
+      </form>
+
+      <nav class="nav-links">
+        <a href="/inicial" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <span>Início</span>
+        </a>
+        <a href="/minha-conta" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Minha conta</span>
+        </a>
+        <a href="/carrinho" class="nav-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>Sacola (<span id="header-cart-count">3</span>)</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+
+
+  <main class="pt-4 pb-5">
+    <div class="container">
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Início</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Confirmação da compra</li>
+        </ol>
+      </nav>
+
+      <h1 class="h2 titulo-secao mb-4">Confirmação da compra</h1>
+
+      <form action="/acesso/compra/finalizar" method="POST">
+        <div class="row g-4">
+
+          <!-- Dados do usuário e itens -->
+          <div class="col-12 col-lg-8">
+
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-body p-4">
+                <h2 class="h5 titulo-secao mb-3">Seus dados</h2>
+                <dl class="row mb-0">
+                  <dt class="col-4 col-sm-3">Nome</dt>
+                  <dd class="col-8 col-sm-9"><%= usuario.nome %></dd>
+                  <dt class="col-4 col-sm-3">E-mail</dt>
+                  <dd class="col-8 col-sm-9"><%= usuario.email %></dd>
+                  <dt class="col-4 col-sm-3">CPF</dt>
+                  <dd class="col-8 col-sm-9"><%= usuario.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4') %></dd>
+                </dl>
+              </div>
+            </div>           
+
+          </div>
+
+          <!-- Total e pagamento -->
+          <div class="col-12 col-lg-4">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <p class="mb-1 text-secondary">Valor total</p>
+                <p class="preco-detalhe mb-4">R$ <%= total.toFixed(2).replace('.', ',') %></p>
+
+                <h2 class="h5 titulo-secao mb-3">Forma de pagamento</h2>
+
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="radio" name="pagamento" id="pg-pix" value="pix" checked>
+                  <label class="form-check-label" for="pg-pix"><i class="bi bi-qr-code me-2"></i>Pix</label>
+                </div>
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="radio" name="pagamento" id="pg-credito" value="credito">
+                  <label class="form-check-label" for="pg-credito"><i class="bi bi-credit-card me-2"></i>Cartão de crédito</label>
+                </div>
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="radio" name="pagamento" id="pg-debito" value="debito">
+                  <label class="form-check-label" for="pg-debito"><i class="bi bi-credit-card-2-front me-2"></i>Cartão de débito</label>
+                </div>
+                <div class="form-check mb-4">
+                  <input class="form-check-input" type="radio" name="pagamento" id="pg-boleto" value="boleto">
+                  <label class="form-check-label" for="pg-boleto"><i class="bi bi-upc me-2"></i>Boleto bancário</label>
+                </div>
+
+                <button type="submit" class="btn btn-ocre btn-lg w-100">Confirmar compra</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </form>
+
+    </div>
+  </main>
+
+<!-- ================= RODAPÉ ================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-col brand-col">
+        <h4 class="footer-title">Mestre André Store</h4>
+        <p class="footer-desc">Instrumentos escolhidos com cuidado. Para quem vive a música, todos os dias.</p>
+        <div class="footer-socials">
+          <a href="/informacoes/redes">Instagram</a>
+          <span class="pipe">/</span>
+          <a href="/informacoes/redes">YouTube</a>
+          <span class="pipe">/</span>
+          <a href="/informacoes/atendimento">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-heading">Explore</h5>
+        <ul class="footer-menu">
+          <li><a href="/catalogo">Todos os instrumentos</a></li>
+          <li><a href="/catalogo">Pianos e teclados</a></li>
+          <li><a href="/catalogo">Lançamentos</a></li>
+          <li><a href="/catalogo">Nosso editorial</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-heading">Precisa de ajuda?</h5>
+        <ul class="footer-menu">
+          <li><a href="/informacoes/entrega">Entrega e frete</a></li>
+          <li><a href="/informacoes/trocas">Trocas e devoluções</a></li>
+          <li><a href="/informacoes/garantia">Garantia</a></li>
+          <li><a href="/informacoes/atendimento">Fale com a gente</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-heading">Atendimento</h5>
+        <ul class="footer-menu">
+          <li>(11) 4000-2026</li>
+          <li>oi@mestreandrestore.com.br</li>
+          <li>Seg. a sex., 9h às 18h</li>
+          <li>São Paulo, SP</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="copyright">
+        © 2026 Mestre André Store. Dados e ofertas demonstrativos. • 
+        <a href="/informacoes/privacidade">Privacidade</a> • 
+        <a href="/informacoes/termos">Termos de uso</a>
+      </p>
+      <div class="payment-methods">
+        <span>VISA</span>
+        <span class="slash">/</span>
+        <span>Mastercard</span>
+        <span class="slash">/</span>
+        <span>Pix</span>
+        <span class="slash">/</span>
+        <span>Boleto</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Externo -->
+  <script src="script.js"></script>
+</body>
+</html>

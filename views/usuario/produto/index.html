@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piano digital Yamaha P-225 | Mestre André Store</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Estilos Customizados -->
+  <link rel="stylesheet" href="css/produto.css">
+</head>
+<body>
+
+  <!-- Top Header / Barra de Navegação -->
+  <header class="product-header border-bottom py-3">
+    <div class="container-fluid px-lg-5 d-flex align-items-center justify-content-between">
+      
+      <!-- Logótipo -->
+      <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
+        <span class="logo-box fw-black fs-5">||||</span>
+        <span class="brand-title fw-bold">Mestre André Store</span>
+      </a>
+
+      <!-- Barra de Pesquisa Central -->
+      <div class="header-search-wrap d-none d-md-block flex-grow-1 mx-5" style="max-width: 450px;">
+        <div class="input-group search-pill">
+          <span class="input-group-text bg-transparent border-end-0 ps-3"><i class="bi bi-search text-muted"></i></span>
+          <input type="text" class="form-control border-start-0 ps-2" placeholder="Qual instrumento faz parte da sua história?">
+        </div>
+      </div>
+
+      <!-- Links de Ação -->
+      <div class="d-flex align-items-center gap-4 header-actions">
+        <a href="index.html" class="nav-action-link text-decoration-none text-dark"><i class="bi bi-house me-1"></i> Início</a>
+        <a href="#" class="nav-action-link text-decoration-none text-dark"><i class="bi bi-person me-1"></i> Minha conta</a>
+        <a href="#" class="nav-action-link text-decoration-none text-dark"><i class="bi bi-bag me-1"></i> Sacola (2)</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Área Principal do Produto -->
+  <main class="container-fluid px-lg-5 py-4">
+    <div class="row gx-lg-5">
+      
+      <!-- Coluna Esquerda: Galeria de Imagens -->
+      <div class="col-lg-7">
+        <!-- Imagem Principal -->
+        <div class="main-image-viewport rounded-2 mb-3 d-flex align-items-center justify-content-center">
+          <img id="mainProductImg" src="img/piano.jpg" alt="Piano digital Yamaha P-225" class="img-fluid main-img">
+        </div>
+
+        <!-- Miniaturas em Carrossel / Galeria -->
+        <div class="d-flex gap-3 thumbnail-strip">
+          <div class="thumb-box active" onclick="changeThumb(this, 'img/piano.jpg')">
+            <img src="img/piano.jpg" alt="Vista 1">
+          </div>
+          <div class="thumb-box" onclick="changeThumb(this, 'img/piano-detalhe1.jpg')">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=300&q=80" alt="Vista 2">
+          </div>
+          <div class="thumb-box" onclick="changeThumb(this, 'img/piano-detalhe2.jpg')">
+            <img src="https://images.unsplash.com/photo-1550291652-6ea9114a47b1?auto=format&fit=crop&w=300&q=80" alt="Vista 3">
+          </div>
+          <div class="thumb-box" onclick="changeThumb(this, 'img/piano-detalhe3.jpg')">
+            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=300&q=80" alt="Vista 4">
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna Direita: Dados, Preço e Compra -->
+      <div class="col-lg-5 ps-lg-4 mt-4 mt-lg-0">
+        <h1 class="product-title mb-0">Piano digital Yamaha</h1>
+        <h2 class="product-model mb-3">P-225</h2>
+
+        <p class="product-lead-text text-muted mb-3">
+          É um piano digital portátil e compacto, projetado para oferecer a sensação de um piano acústico de concerto com um corpo mais leve e moderno.
+        </p>
+
+        <!-- Avaliação Geral -->
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <div class="text-warning rating-stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <span class="text-xs text-muted">4,9 • 86 avaliações</span>
+        </div>
+
+        <hr class="my-3 opacity-25">
+
+        <!-- Preço e Parcelamento -->
+        <div class="product-price-value mb-1">R$ 5.990,00</div>
+        <div class="text-xs text-muted mb-4">10x de R$ 599,00 sem juros • Pix, cartão ou boleto</div>
+
+        <!-- Seletor de Cor -->
+        <div class="d-flex align-items-center gap-2 mb-4">
+          <span class="color-bullet bg-dark"></span>
+          <span class="fs-14 text-secondary">cor preta</span>
+        </div>
+
+        <!-- Controles de Quantidade e Adicionar à Sacola -->
+        <div class="d-flex align-items-stretch gap-3 mb-3">
+          <div class="qty-selector d-flex align-items-center justify-content-between">
+            <button type="button" class="btn btn-qty" onclick="changeQty(-1)">-</button>
+            <span id="qtyVal" class="fw-semibold px-3">1</span>
+            <button type="button" class="btn btn-qty" onclick="changeQty(1)">+</button>
+          </div>
+          
+          <button class="btn btn-bordeaux-add flex-grow-1 rounded-2" onclick="handleAddToCart()">
+            Adicionar a sacola
+          </button>
+        </div>
+
+        <!-- Salvar nos favoritos -->
+        <button class="btn btn-wishlist-pill w-100 rounded-2 mb-4 py-2" onclick="toggleFav(this)">
+          <i class="bi bi-heart me-2" id="favIcon"></i> <span id="favText">Salvar nos favoritos</span>
+        </button>
+
+        <!-- Cálculo de Frete -->
+        <div class="shipping-box border rounded-3 p-3 mb-2">
+          <label class="text-xs fw-semibold text-muted d-block mb-1">Entrega na sua casa</label>
+          <div class="d-flex gap-2">
+            <input type="text" class="form-control form-control-sm border rounded-2" id="cepInput" value="01310-100" placeholder="00000-000">
+            <button class="btn btn-sm btn-outline-secondary px-3 rounded-2" onclick="calcFrete()">Calcular</button>
+          </div>
+        </div>
+        <div class="text-xs text-muted px-1" id="shippingResult">
+          São Paulo, SP • Entrega padrão: R$ 89,00 Receba entre 08 e 09 de outubro.
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Navegação de Abas Inferiores: Sobre o instrumento vs Avaliações -->
+    <div class="product-tabs-wrapper mt-5 pt-3 border-top">
+      <ul class="nav product-nav-tabs gap-4" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="tab-specs-btn" data-bs-toggle="pill" data-bs-target="#tab-specs" type="button" role="tab">
+            Sobre o instrumento
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab-reviews-btn" data-bs-toggle="pill" data-bs-target="#tab-reviews" type="button" role="tab">
+            Avaliações (88)
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Conteúdo Dinâmico das Abas -->
+    <div class="tab-content pt-4">
+      
+      <!-- ABA 1: Sobre o instrumento / Especificações[cite: 9] -->
+      <div class="tab-pane fade show active" id="tab-specs" role="tabpanel">
+        <div class="row align-items-start gx-lg-5">
+          
+          <!-- Miniatura do Produto com Legenda -->
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="specs-preview-box rounded-3 p-4 mb-3 d-flex align-items-center justify-content-center">
+              <img src="img/piano.jpg" alt="P-225 Especificações" class="img-fluid">
+            </div>
+            <p class="specs-desc-text text-muted">
+              O P-225 reúne a resposta natural das teclas Graded Hammer Compact com o timbre do piano de concerto Yamaha CFX. Um instrumento para estudar, compor e se apresentar com sensibilidade — sem abrir mão de um design compacto.
+            </p>
+          </div>
+
+          <!-- Tabela de Linhas de Especificações -->
+          <div class="col-lg-8 ps-lg-4">
+            <h3 class="specs-section-title mb-4">Especificações</h3>
+            <div class="specs-table">
+              <div class="spec-row py-3 border-bottom d-flex justify-content-between">
+                <span class="spec-label text-muted">Teclado</span>
+                <span class="spec-val fw-semibold text-end">88 teclas • Graded Hammer Compact</span>
+              </div>
+              <div class="spec-row py-3 border-bottom d-flex justify-content-between">
+                <span class="spec-label text-muted">Polifonia</span>
+                <span class="spec-val fw-semibold text-end">192 notas</span>
+              </div>
+              <div class="spec-row py-3 border-bottom d-flex justify-content-between">
+                <span class="spec-label text-muted">Vozes</span>
+                <span class="spec-val fw-semibold text-end">24 timbres • Yamaha CFX</span>
+              </div>
+              <div class="spec-row py-3 border-bottom d-flex justify-content-between">
+                <span class="spec-label text-muted">Conexões</span>
+                <span class="spec-val fw-semibold text-end">USB to Host, AUX OUT e 2 saídas de fone</span>
+              </div>
+              <div class="spec-row py-3 border-bottom d-flex justify-content-between">
+                <span class="spec-label text-muted">Dimensões / peso</span>
+                <span class="spec-val fw-semibold text-end">1.326 × 272 × 129 mm / 11,5 kg</span>
+              </div>
+              <div class="spec-row py-3 border-bottom d-flex justify-content-between">
+                <span class="spec-label text-muted">Conteúdo da caixa</span>
+                <span class="spec-val fw-semibold text-end">Piano, pedal de sustain, fonte e estante</span>
+              </div>
+            </div>
+
+            <div class="text-xs text-muted mt-3">
+              Banco e suporte vendidos separadamente. Consulte a compatibilidade dos acessórios com nossa equipe.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABA 2: Avaliações dos Clientes[cite: 10] -->
+      <div class="tab-pane fade" id="tab-reviews" role="tabpanel">
+        <div class="reviews-list py-2" style="max-width: 900px;">
+          
+          <!-- Avaliação 1 -->
+          <div class="review-entry d-flex gap-4 py-3 border-bottom">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Ana Ribeiro" class="reviewer-avatar rounded-circle">
+            <div class="flex-grow-1">
+              <div class="text-warning rating-stars mb-1">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <h5 class="review-quote mb-1">"O toque é incrível. Redescobri o prazer de estudar."</h5>
+              <div class="review-author text-muted text-xs">
+                Ana Ribeiro • Compra verificada • 24 de setembro de 2026
+              </div>
+            </div>
+          </div>
+
+          <!-- Avaliação 2 -->
+          <div class="review-entry d-flex gap-4 py-3 border-bottom">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Vlademir Brandão" class="reviewer-avatar rounded-circle">
+            <div class="flex-grow-1">
+              <div class="text-warning rating-stars mb-1">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <h5 class="review-quote mb-1">"O toque é incrível. Redescobri o prazer de estudar."</h5>
+              <div class="review-author text-muted text-xs">
+                Vlademir Brandão • Compra verificada • 24 de setembro de 2026
+              </div>
+            </div>
+          </div>
+
+          <!-- Avaliação 3 -->
+          <div class="review-entry d-flex gap-4 py-3 border-bottom">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Roberta Carla" class="reviewer-avatar rounded-circle">
+            <div class="flex-grow-1">
+              <div class="text-warning rating-stars mb-1">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <h5 class="review-quote mb-1">"O toque é incrível. Redescobri o prazer de estudar."</h5>
+              <div class="review-author text-muted text-xs">
+                Roberta Carla • Compra verificada • 24 de setembro de 2026
+              </div>
+            </div>
+          </div>
+
+          <!-- Avaliação 4 -->
+          <div class="review-entry d-flex gap-4 py-3 border-bottom">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Lucas Ribeiro" class="reviewer-avatar rounded-circle">
+            <div class="flex-grow-1">
+              <div class="text-warning rating-stars mb-1">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <h5 class="review-quote mb-1">"O toque é incrível. Redescobri o prazer de estudar."</h5>
+              <div class="review-author text-muted text-xs">
+                Lucas Ribeiro • Compra verificada • 24 de setembro de 2026
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="product-footer bg-black text-white pt-5 pb-4 mt-5">
+    <div class="container-fluid px-lg-5">
+      <div class="row gy-4">
+        
+        <div class="col-lg-4 pe-lg-5">
+          <h4 class="footer-brand mb-3 fw-bold fs-5">Mestre André Store</h4>
+          <p class="text-xs text-white-50 mb-4 lh-base">
+            Instrumentos escolhidos com cuidado. Para quem vive a música, todos os dias.
+          </p>
+          <div class="d-flex gap-3 text-xs text-white-50">
+            <a href="#" class="footer-social-link">Instagram</a>
+            <span>/</span>
+            <a href="#" class="footer-social-link">YouTube</a>
+            <span>/</span>
+            <a href="#" class="footer-social-link">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="footer-col-title text-white-50 mb-3">Explore</h6>
+          <ul class="list-unstyled text-xs d-flex flex-column gap-2 mb-0">
+            <li><a href="#" class="footer-link">Todos os instrumentos</a></li>
+            <li><a href="#" class="footer-link">Pianos e teclados</a></li>
+            <li><a href="#" class="footer-link">Lançamentos</a></li>
+            <li><a href="#" class="footer-link">Nosso editorial</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h6 class="footer-col-title text-white-50 mb-3">Precisa de ajuda?</h6>
+          <ul class="list-unstyled text-xs d-flex flex-column gap-2 mb-0">
+            <li><a href="#" class="footer-link">Entrega e frete</a></li>
+            <li><a href="#" class="footer-link">Trocas e devoluções</a></li>
+            <li><a href="#" class="footer-link">Garantia</a></li>
+            <li><a href="#" class="footer-link">Fale com a gente</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <h6 class="footer-col-title text-white-50 mb-3">Atendimento</h6>
+          <div class="text-xs text-white-50 d-flex flex-column gap-1">
+            <span>(11) 4000-2026</span>
+            <span>oi@mestreandrestore.com.br</span>
+            <span>Seg. a sex., 9h às 19h</span>
+            <span>São Paulo, SP</span>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary border-opacity-25 my-4">
+
+      <div class="d-flex flex-wrap justify-content-between align-items-center text-xs text-white-50 gap-2">
+        <div>
+          © 2026 Mestre André Store. Dados e ofertas demonstrativos. • 
+          <a href="#" class="text-white-50 text-decoration-none">Privacidade</a> • 
+          <a href="#" class="text-white-50 text-decoration-none">Termos de uso</a>
+        </div>
+        <div class="payment-methods text-uppercase">
+          VISA / Mastercard / Pix / Boleto
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/produto.js"></script>
+</body>
+</html>

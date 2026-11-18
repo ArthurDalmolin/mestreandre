@@ -1,0 +1,669 @@
+/* ==========================================================================
+   ESTRUTURA PARA FIXAR O RODAPÉ NA BASE (STICKY FOOTER)
+   ========================================================================== */
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 0 !important;
+  overflow-x: hidden;
+}
+
+/* O elemento principal expande e empurra o footer para o limite da janela */
+main,
+.main-content {
+  flex: 1 0 auto !important;
+}
+
+/* Garante largura total e ancoragem sem vãos */
+.site-footer {
+  margin-top: auto !important; /* Empurra o footer até o final do ecrã */
+  width: 100% !important;
+  background-color: var(--bg-darker, #0b0b0b) !important;
+  flex-shrink: 0 !important;
+}
+
+.footer-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: #a0a0a0;
+}
+
+.footer-title {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.newsletter-input {
+  background-color: #222;
+  border: 1px solid #3a3a3a;
+  color: #fff;
+  border-radius: 0;
+  font-size: 0.85rem;
+}
+
+.newsletter-input:focus {
+  background-color: #2a2a2a;
+  border-color: #555;
+  color: #fff;
+  box-shadow: none;
+}
+
+.btn-newsletter {
+  background-color: #fff;
+  color: #111;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.btn-newsletter:hover {
+  background-color: #e0e0e0;
+}
+
+/* ==========================================================================
+   VARIÁVEIS & RESET
+   ========================================================================== */
+:root {
+  --bg-dark: #121212;
+  --bg-darker: #0b0b0b;
+  --color-bordeaux: #75282d;
+  --color-bordeaux-hover: #5e2024;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --text-primary: #1c1c1c;
+  --text-muted: #6c757d;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background-color: #ffffff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.text-xs { font-size: 0.78rem; }
+.fs-14 { font-size: 0.875rem; }
+.tracking-wide { letter-spacing: 0.15em; }
+.tracking-wider { letter-spacing: 0.25em; }
+
+/* ==========================================================================
+   HEADER & NAVBAR
+   ========================================================================== */
+.site-header { background-color: var(--bg-darker); z-index: 1030; }
+.brand-logo { font-family: var(--font-serif); font-size: 1.5rem; letter-spacing: -0.02em; }
+.search-input { background-color: #1e1e1e; border: 1px solid #333; color: #fff; border-radius: 4px 0 0 4px; font-size: 0.85rem; padding: 0.6rem 1rem; }
+.search-input:focus { background-color: #262626; border-color: #555; color: #fff; box-shadow: none; }
+.search-icon { background-color: #1e1e1e; border: 1px solid #333; border-right: none; color: #888; }
+.header-link { font-size: 0.85rem; transition: opacity 0.2s ease; }
+.header-link:hover { opacity: 0.8; }
+.wishlist-badge, .cart-badge { background-color: var(--color-bordeaux); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 6px; border-radius: 10px; position: absolute; top: -6px; right: -8px; }
+
+/* Subnav */
+.subnav-link { color: #a0a0a0; font-size: 0.82rem; font-weight: 500; padding: 0.4rem 0.6rem; transition: color 0.2s ease; }
+.subnav-link:hover, .subnav-link.active { color: #ffffff; }
+.subnav-link.text-accent { color: #c9a474; }
+
+/* ==========================================================================
+   HERO SECTION COM IMAGEM DIRETO NO HTML
+   ========================================================================== */
+.hero-section {
+  min-height: 520px;
+  background-color: #0b0b0b;
+  position: relative;
+}
+
+.hero-bg-img {
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.hero-overlay {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.45) 60%, rgba(0, 0, 0, 0.2) 100%);
+  z-index: 1;
+}
+
+.hero-badge { font-size: 0.75rem; color: #d1b58a; display: block; }
+.hero-title { font-family: var(--font-serif); font-size: 3.2rem; line-height: 1.15; font-weight: 600; }
+.hero-desc { font-size: 0.95rem; color: #cccccc; max-width: 500px; line-height: 1.6; }
+.btn-hero { background-color: #ffffff; color: #121212; font-weight: 600; font-size: 0.85rem; transition: all 0.3s ease; }
+.btn-hero:hover { background-color: #f0f0f0; transform: translateY(-2px); }
+
+/* Benefícios */
+.benefits-bar { background-color: var(--bg-dark); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.benefit-item { border-right: 1px solid rgba(255,255,255,0.08); }
+.benefit-item:last-child { border-right: none; }
+
+/* Headings */
+.sub-header-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; color: #8c8c8c; display: block; }
+.section-heading { font-family: var(--font-serif); font-size: 2.1rem; font-weight: 600; color: #1a1a1a; }
+.explore-link { font-size: 0.85rem; font-weight: 600; color: #1a1a1a; transition: color 0.2s ease; }
+.explore-link:hover { color: var(--color-bordeaux); }
+
+/* ==========================================================================
+   CATEGORIAS: HOVER TRANSIÇÃO SUAVE
+   ========================================================================== */
+.category-card { cursor: pointer; transition: transform 0.3s ease; }
+.category-card:hover { transform: translateY(-4px); }
+.category-img-wrap { background-color: #f6f6f6; border-radius: 4px; overflow: hidden; height: 200px; position: relative; width: 100%; }
+
+.category-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.category-img.img-default { opacity: 1; z-index: 1; }
+.category-img.img-hover { opacity: 0; z-index: 2; }
+
+.category-card:hover .category-img.img-default { opacity: 0; transform: scale(1.05); }
+.category-card:hover .category-img.img-hover { opacity: 1; transform: scale(1.05); }
+
+.category-title { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 600; color: #111; margin-bottom: 2px; }
+.category-sub { font-size: 0.78rem; color: var(--text-muted); }
+
+/* ==========================================================================
+   SEÇÃO MAIS VENDIDOS
+   ========================================================================== */
+.section-heading-serif {
+  font-family: var(--font-serif);
+  font-size: 2.3rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+}
+
+.bestseller-card { cursor: pointer; background: transparent; transition: transform 0.25s ease; }
+.bestseller-card:hover { transform: translateY(-4px); }
+
+/* Garante que a caixa da imagem mantenha o tamanho padrão e esconda excessos */
+.bestseller-img-box {
+  background: linear-gradient(145deg, #e3e3e3 0%, #cecece 100%);
+  border-radius: 12px;
+  height: 250px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Importante para a foto não vazar */
+  padding: 0; /* Remove padding antigo para a foto encostar nas bordas se desejar */
+}
+
+/* Faz a imagem preencher 100% da largura e altura do quadro */
+.bestseller-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cobre todo o espaço mantendo a proporção */
+  object-position: center;
+  transition: transform 0.35s ease;
+}
+
+.bestseller-card:hover .bestseller-img {
+  transform: scale(1.05); /* Efeito de zoom suave ao passar o mouse */
+}
+
+.btn-fav-round {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8c2a32;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  font-size: 0.9rem;
+  transition: background-color 0.2s, transform 0.2s;
+  z-index: 4;
+}
+
+.btn-fav-round:hover { background-color: #f7f7f7; transform: scale(1.1); }
+
+.product-badge-tag {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  letter-spacing: 0.02em;
+}
+
+.bestseller-brand { font-size: 0.7rem; letter-spacing: 0.1em; color: #777777; font-weight: 600; display: block; }
+.bestseller-title { font-family: var(--font-sans); font-size: 1.05rem; font-weight: 700; color: #1a1a1a; margin: 3px 0 2px 0; }
+.bestseller-specs { font-size: 0.75rem; color: #888888; margin-bottom: 0.6rem; }
+.bestseller-price { font-size: 1.15rem; font-weight: 700; color: #1a1a1a; line-height: 1.2; }
+.bestseller-installment { font-size: 0.72rem; color: #777777; }
+
+/* ==========================================================================
+   NOVO CARROSSEL PROMOCIONAL (BOOTSTRAP NATIVO)
+   ========================================================================== */
+.promo-banner-full {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+}
+
+.promo-img-box {
+  height: 360px;
+  position: relative;
+  background-color: #1a1a1a;
+  overflow: hidden;
+}
+
+.promo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.promo-text-box {
+  height: 360px;
+  padding: 2.5rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.promo-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.promo-title {
+  font-family: var(--font-sans);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  max-width: 460px;
+}
+
+.promo-desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 480px;
+  line-height: 1.45;
+  margin-bottom: 1.25rem;
+}
+
+.promo-price {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 1.25rem;
+}
+
+.btn-promo-action {
+  background-color: #050505;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-promo-action:hover {
+  background-color: #222222;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Setas brancas limpas posicionadas sobre a metade da foto */
+.promo-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  transition: transform 0.2s ease;
+}
+
+.promo-arrow:hover {
+  transform: translateY(-50%) scale(1.15);
+}
+
+.promo-arrow-prev {
+  left: 16px;
+}
+
+/* Fica no canto direito da foto (perto de 50% da tela no desktop) */
+.promo-arrow-next {
+  left: calc(50% - 58px);
+}
+
+/* Bolinhas na base da foto */
+.promo-indicators {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  width: 50%;
+  margin: 0;
+  justify-content: center;
+  gap: 8px;
+  z-index: 20;
+}
+
+.promo-indicators [data-bs-target] {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  transition: all 0.25s ease;
+}
+
+.promo-indicators .active {
+  background-color: #ffffff;
+  transform: scale(1.2);
+}
+
+/* Ajuste responsivo para telas de celular */
+@media (max-width: 991.98px) {
+  .promo-img-box { height: 260px; }
+  .promo-text-box { height: auto; padding: 2rem 1.5rem; }
+  .promo-arrow { top: 130px; }
+  .promo-arrow-next { left: auto; right: 16px; }
+  .promo-indicators { top: 230px; bottom: auto; width: 100%; }
+}
+
+/* ==========================================================================
+   MARCAS & SOBRE
+   ========================================================================== */
+.brands-wrapper { padding: 1.5rem 0; border-top: 1px solid #ebebeb; border-bottom: 1px solid #ebebeb; }
+.brand-item { font-size: 1.3rem; font-weight: 700; color: #333; letter-spacing: 0.05em; opacity: 0.85; }
+.brand-fender { font-family: var(--font-serif); font-style: italic; font-size: 1.6rem; }
+.brand-audiotechnica { font-family: monospace; font-size: 1.1rem; }
+
+.about-title { font-family: var(--font-serif); font-size: 2.4rem; font-weight: 600; }
+.stat-number { font-family: var(--font-serif); font-size: 2rem; font-weight: 700; color: #111; }
+.stat-label { font-size: 0.78rem; color: var(--text-muted); }
+.testimonial-card { background-color: #fafafa; border: 1px solid #eee; border-radius: 2px; }
+.testimonial-text { font-size: 0.9rem; line-height: 1.6; color: #333; font-style: italic; }
+
+/* ==========================================================================
+   TECLAS DE PIANO COM SOM (FULL WIDTH EDGE-TO-EDGE)
+   ========================================================================== */
+.piano-divider {
+  width:100%;
+  position:relative;
+  margin:0;
+  background-color: #1e1e1e;
+  overflow: hidden;
+  height: 65px;
+  user-select: none;
+  box-sizing: border-box;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.piano-keys {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.piano-keys .white {
+  flex: 1;
+  background-color: #f7f7f7;
+  border-right: 1px solid #d0d0d0;
+  position: relative;
+  height: 100%;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.piano-keys .white:hover {
+  background-color: #ececec;
+}
+
+.piano-keys .white:active,
+.piano-keys .white.pressed {
+  background-color: #dadada;
+  box-shadow: inset 0 -4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.piano-keys .black {
+  position: absolute;
+  right: -8px;
+  top: 0;
+  width: 16px;
+  height: 65%;
+  background-color: #1a1a1a;
+  z-index: 5;
+  border-radius: 0 0 3px 3px;
+  cursor: pointer;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.1s ease;
+}
+
+.piano-keys .black:hover {
+  background-color: #333333;
+}
+
+.piano-keys .black:active,
+.piano-keys .black.pressed {
+  background-color: #555555;
+}
+/* ==========================================================================
+   FOOTER & OFFCANVAS
+   ========================================================================== */
+/* ==========================================================================
+   RODAPÉ (ANCORADO NA BASE E FULL-WIDTH)
+   ========================================================================== */
+.site-footer {
+  background-color:var(--bg-darker, #0b0b0b);
+  width:100%;
+  position:static;
+  margin-left:0;
+  margin-right:0;
+  margin-top: auto !important; /* Empurra o footer para o fundo da janela */
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.footer-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: #a0a0a0;
+}
+
+.footer-title {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.newsletter-input {
+  background-color: #222;
+  border: 1px solid #3a3a3a;
+  color: #fff;
+  border-radius: 0;
+  font-size: 0.85rem;
+}
+
+.newsletter-input:focus {
+  background-color: #2a2a2a;
+  border-color: #555;
+  color: #fff;
+  box-shadow: none;
+}
+
+.btn-newsletter {
+  background-color: #fff;
+  color: #111;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.btn-newsletter:hover {
+  background-color: #e0e0e0;
+}
+
+.cart-item { border-bottom: 1px solid #f0f0f0; padding-bottom: 1rem; margin-bottom: 1rem; }
+.cart-item-img { width: 64px; height: 64px; object-fit: contain; background-color: #f7f7f7; padding: 4px; }
+
+/* Força as setas a ficarem clicáveis na camada superior */
+.carousel-arrow {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 44px !important;
+  height: 44px !important;
+  background-color: rgba(0, 0, 0, 0.65) !important;
+  border: none !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  z-index: 9999 !important; /* Garante que fica acima da foto */
+  pointer-events: auto !important;
+  border-radius: 0 !important;
+}
+
+.carousel-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.carousel-arrow-left {
+  left: 15px !important;
+}
+
+.carousel-arrow-right {
+  right: 15px !important;
+}
+
+/* Garante que o container da foto não sobreponha as setas */
+.banner-img-side {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* O footer e o piano herdam a largura integral do layout compartilhado. */
+.site-footer,.product-footer,.piano-divider{width:100%!important;max-width:100%!important;left:auto!important;right:auto!important;margin-left:0!important;margin-right:0!important;transform:none!important}
+
+/* ==========================================================================
+   BUSCA COM LISTA SUSPENSA (DROPDOWN)
+   ========================================================================== */
+.header-search-wrap {
+  position: relative;
+  z-index: 9999;
+}
+
+.search-dropdown-box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 6px;
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  max-height: 320px;
+  overflow-y: auto;
+  z-index: 10000;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: #1a1a1a;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.15s ease;
+}
+
+.search-result-item:last-of-type {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background-color: #f7f7f7;
+  color: #000000;
+}
+
+.search-result-img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 6px;
+  background-color: #eaeaea;
+  flex-shrink: 0;
+}
+
+.search-result-info {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.search-result-brand {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: #888888;
+  display: block;
+  font-weight: 700;
+}
+
+.search-result-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-result-price {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #111111;
+  white-space: nowrap;
+}

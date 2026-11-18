@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mestre André Store | Da loja pra sua casa, da sua casa para o mundo</title>
+  
+  <!-- Google Fonts: Playfair Display + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Estilos Customizados -->
+  <link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="/css/site-shared.css">
+</head>
+<body>
+
+  <%- include('../partials/header') %>
+
+  <% if(typeof newsletterMsg !== 'undefined' && newsletterMsg){ %><div class="alert alert-info text-center m-0"><%= newsletterMsg %></div><% } %>
+  <main class="home-main">
+  <!-- Hero Section (Imagem direta no HTML) -->
+  <section class="hero-section position-relative overflow-hidden text-white d-flex align-items-center">
+    <img 
+      src="/img/inicio.jpg" 
+      alt="Fundo Mestre André Store" 
+      class="hero-bg-img position-absolute top-0 start-0 w-100 h-100"
+    >
+    <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+
+    <div class="container-fluid px-lg-5 position-relative" style="z-index: 2;">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-xl-6 py-5">
+          <span class="hero-badge text-uppercase tracking-wide">A VIDA TEM MÚSICA. ENCONTRE O SEU SOM.</span>
+          <h1 class="hero-title my-4">Da loja pra sua<br>casa, da sua casa<br>para o mundo.</h1>
+          <p class="hero-desc mb-4">
+            Em cada detalhe, a sua história ecoa. Uma curadoria de instrumentos prontos para transformar sua paixão em música autêntica.
+          </p>
+          <div class="d-flex flex-wrap gap-3 align-items-center"><a href="#mais-vendidos" class="btn btn-hero rounded-0 d-inline-flex align-items-center gap-3 px-4 py-3"><span>Encontre seu instrumento</span><i class="bi bi-arrow-right"></i></a><a href="/boas-vindas" class="btn btn-outline-light rounded-0 px-4 py-3">Começar com meu e-mail</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Barra de Benefícios -->
+  <section class="benefits-bar py-4">
+    <div class="container-fluid px-lg-5">
+      <div class="row g-4 text-white-50">
+        <div class="col-md-3 col-6 d-flex align-items-center gap-3 benefit-item">
+          <i class="bi bi-truck fs-3 text-white"></i>
+          <div>
+            <div class="fw-semibold text-white fs-14">Consulte as opções de entrega</div>
+            <div class="text-xs">Prazos e valores confirmados pela loja</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-center gap-3 benefit-item">
+          <i class="bi bi-credit-card fs-3 text-white"></i>
+          <div>
+            <div class="fw-semibold text-white fs-14">Pagamento sob consulta</div>
+            <div class="text-xs">Condições combinadas com a loja</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-center gap-3 benefit-item">
+          <i class="bi bi-shield-check fs-3 text-white"></i>
+          <div>
+            <div class="fw-semibold text-white fs-14">Produtos originais</div>
+            <div class="text-xs">Garantia e procedência oficial</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-center gap-3 benefit-item">
+          <i class="bi bi-headset fs-3 text-white"></i>
+          <div>
+            <div class="fw-semibold text-white fs-14">Quem entende, atende</div>
+            <div class="text-xs">Conte com nossos especialistas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção: Categorias (Com efeito hover suave para imagem colorida) -->
+  <section class="section-categories py-5" id="categorias">
+    <div class="container-fluid px-lg-5">
+      <div class="d-flex justify-content-between align-items-end mb-2">
+        <div>
+          <span class="sub-header-label">UM UNIVERSO DE POSSIBILIDADES</span>
+          <h2 class="section-heading mt-1">Qual é o seu instrumento?</h2>
+        </div>
+        <span class="text-muted small">Escolha um estilo para explorar</span>
+      </div>
+
+      <details class="home-category-details"><summary>Explorar categorias <i class="bi bi-chevron-down" aria-hidden="true"></i></summary>
+      <div class="row g-4 mt-1">
+        <!-- Pianos e teclados -->
+        <div class="col-6 col-md-3">
+          <div class="category-card" onclick="filterCategory('teclas')" role="link" tabindex="0" onkeydown="if(event.key==='Enter')filterCategory('teclas')">
+            <div class="category-img-wrap position-relative">
+              <img src="/img/teclados.png" alt="Pianos e teclados" class="category-img img-default">
+              <img src="/img/teclado+color.jpg" alt="Pianos e teclados em ação" class="category-img img-hover">
+            </div>
+            <h5 class="category-title mt-3">Pianos e teclados <i class="bi bi-arrow-up-right fs-6"></i></h5>
+            <p class="category-sub">O toque que inspira</p>
+          </div>
+        </div>
+
+        <!-- Guitarras e violões -->
+        <div class="col-6 col-md-3">
+          <div class="category-card" onclick="filterCategory('cordas')" role="link" tabindex="0" onkeydown="if(event.key==='Enter')filterCategory('cordas')">
+            <div class="category-img-wrap position-relative">
+              <img src="/img/guitarras.png" alt="Guitarras e violões" class="category-img img-default">
+              <img src="/img/guitarra_color.jpg" alt="Guitarras e violões em ação" class="category-img img-hover">
+            </div>
+            <h5 class="category-title mt-3">Guitarras e violões <i class="bi bi-arrow-up-right fs-6"></i></h5>
+            <p class="category-sub">Encontre o seu timbre</p>
+          </div>
+        </div>
+
+        <!-- Bateria e percussão -->
+        <div class="col-6 col-md-3">
+          <div class="category-card" onclick="filterCategory('bateria')" role="link" tabindex="0" onkeydown="if(event.key==='Enter')filterCategory('bateria')">
+            <div class="category-img-wrap position-relative">
+              <img src="/img/baterias.png" alt="Bateria e percussão" class="category-img img-default">
+              <img src="/img/bateria_color.jpg" alt="Bateria e percussão em ação" class="category-img img-hover">
+            </div>
+            <h5 class="category-title mt-3">Bateria e percussão <i class="bi bi-arrow-up-right fs-6"></i></h5>
+            <p class="category-sub">Solte o seu ritmo</p>
+          </div>
+        </div>
+
+        <!-- Áudio e acessórios -->
+        <div class="col-6 col-md-3">
+          <div class="category-card" onclick="filterCategory('audio')" role="link" tabindex="0" onkeydown="if(event.key==='Enter')filterCategory('audio')">
+            <div class="category-img-wrap position-relative">
+              <img src="/img/acessorios.png" alt="Áudio e acessórios" class="category-img img-default">
+              <img src="/img/acessorio+color.jpg" alt="Áudio e acessórios em uso" class="category-img img-hover">
+            </div>
+            <h5 class="category-title mt-3">Áudio e acessórios <i class="bi bi-arrow-up-right fs-6"></i></h5>
+            <p class="category-sub">Ouça cada detalhe</p>
+          </div>
+        </div>
+      </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Seção: Mais Vendidos (Nova Seção Exata do Figma) -->
+<section class="section-bestsellers py-5" id="mais-vendidos">
+  <div class="container-fluid px-lg-5">
+    <div class="d-flex justify-content-between align-items-end mb-4">
+      <div>
+        <span class="sub-header-label">ESCOLHIDOS POR QUEM ENTENDE</span>
+        <h2 class="section-heading-serif mt-1">Mais vendidos</h2>
+      </div>
+      <a href="#destaques" class="explore-link text-decoration-none">
+        Ver todos os destaques <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
+
+<div class="row g-4">
+  <% produtos.forEach(produto => { %>
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="bestseller-card h-100 d-flex flex-column">
+        <div class="bestseller-img-box position-relative"><a href="/produto/<%= produto.id %>" aria-label="Ver <%= produto.nome %>"><img src="<%= imagemUrl(produto.imagem) %>" onerror="this.onerror=null;this.src='<%= imagemReserva(produto.categoria) %>'" alt="<%= produto.nome %>" class="bestseller-img"></a><form action="/favoritos/<%= produto.id %>" method="post" style="position:absolute;top:12px;right:12px;z-index:6"><button type="submit" class="btn-fav-round" title="Salvar favorito"><i class="bi bi-heart"></i></button></form><span class="product-badge-tag">Destaque</span></div><a href="/produto/<%= produto.id %>" class="text-decoration-none text-dark flex-grow-1">
+          <div class="bestseller-info pt-3">
+            <span class="bestseller-brand"><%= produto.marca %></span>
+            <h4 class="bestseller-title"><%= produto.nome %></h4>
+            <p class="bestseller-specs"><%= produto.descricao %></p>
+            <div class="bestseller-price"><%= formatarValor(produto.valor) %></div>
+            <div class="bestseller-installment mb-2">Consulte condições com a loja</div>
+          </div>
+        </a>
+        
+        <form action="/carrinho/adicionar/<%= produto.id %>" method="post"><button type="submit" class="btn btn-sm btn-dark w-100 rounded-0 mt-auto" <%= produto.estoque<=0?'disabled':'' %>><%= produto.estoque>0?'Adicionar à sacola':'Sem estoque' %></button></form>
+      </div>
+    </div>
+  <% }); %>
+</div>
+
+  <!-- Seção: Catálogo Completo / Busca Dinâmica -->
+  <section class="section-featured py-4" id="destaques">
+    <div class="container-fluid px-lg-5">
+      <div class="row g-4" id="productsGrid">
+        <div class="col-12 text-center"><a class="btn btn-outline-dark rounded-0 px-4 py-3" href="/catalogo">Explorar catálogo completo <i class="bi bi-arrow-right"></i></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner Promocional Bordô (Full-Width Edge-to-Edge & Altura Reduzida) -->
+<!-- Carrossel Promo Full-Width Nativo do Bootstrap (Zero conflitos) -->
+<section class="promo-banner-full my-5">
+  <div id="promoCarousel" class="carousel slide carousel-fade" data-bs-ride="false">
+    
+    <div class="carousel-inner">
+
+      <!-- SLIDE 1: GUITARRA (Bordô) -->
+      <div class="carousel-item active">
+        <div class="row g-0">
+          <div class="col-lg-6 promo-img-box">
+            <img src="/img/guitarra_banner.png" alt="Guitarra" class="promo-img">
+          </div>
+          <div class="col-lg-6 promo-text-box" style="background-color: #75282d;">
+            <span class="promo-tag" style="color: #e8b0b4;">NOVAS HISTÓRIAS, NOVAS HARMONIAS</span>
+            <h2 class="promo-title">Seu próximo capítulo tem 6 cordas.</h2>
+            <p class="promo-desc">Conheça nossas guitarras em promoção, modelos expressivos, qualidade de ponta e prontas para os palcos.</p>
+            <div class="promo-price">Explore o catálogo</div>
+            <div>
+              <a href="/catalogo" class="btn-promo-action">
+                <span>Descubra os lançamentos</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2: SAXOFONE (Ocre/Dourado) -->
+      <div class="carousel-item">
+        <div class="row g-0">
+          <div class="col-lg-6 promo-img-box">
+            <img src="/img/saxofone_banner.png" alt="Saxofone" class="promo-img">
+          </div>
+          <div class="col-lg-6 promo-text-box" style="background-color: #9a7444;">
+            <span class="promo-tag" style="color: #2b1d0c;">NOVOS SONS, NOVAS HISTÓRIAS</span>
+            <h2 class="promo-title">Seu próximo capítulo começa aqui.</h2>
+            <p class="promo-desc">Conheça nossos saxofones em promoção, modelos expressivos, qualidade de ponta e para todos os gostos.</p>
+            <div class="promo-price">Confira no catálogo</div>
+            <div>
+              <a href="/catalogo" class="btn-promo-action">
+                <span>Descubra os lançamentos</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3: BATERIA (Vinho Profundo) -->
+      <div class="carousel-item">
+        <div class="row g-0">
+          <div class="col-lg-6 promo-img-box">
+            <img src="/img/bateria_banner.png" alt="Bateria" class="promo-img">
+          </div>
+          <div class="col-lg-6 promo-text-box" style="background-color: #6e151b;">
+            <span class="promo-tag" style="color: #240003;">NOVOS SONS, NOVAS HISTÓRIAS</span>
+            <h2 class="promo-title">Seu próximo capítulo tem muita percurssão</h2>
+            <p class="promo-desc">Conheça nossas baterias em promoção, modelos expressivos, qualidade de ponta e para todos os gostos.</p>
+            <div class="promo-price">Confira no catálogo</div>
+            <div>
+              <a href="/catalogo" class="btn-promo-action">
+                <span>Descubra os lançamentos</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 4: PALHETAS (Azul Acinzentado) -->
+      <div class="carousel-item">
+        <div class="row g-0">
+          <div class="col-lg-6 promo-img-box">
+            <img src="/img/palhetas_banner.png" alt="Palhetas" class="promo-img">
+          </div>
+          <div class="col-lg-6 promo-text-box" style="background-color: #4e6373;">
+            <span class="promo-tag" style="color: #19232a;">NOVOS SONS, NOVAS HISTÓRIAS</span>
+            <h2 class="promo-title">Seu próximo capítulo pode ter várias cores.</h2>
+            <p class="promo-desc">Conheça nossas palhetas em promoção, modelos expressivos, qualidade de ponta e para todos os gostos.</p>
+            <div class="promo-price">Confira no catálogo</div>
+            <div>
+              <a href="/catalogo" class="btn-promo-action">
+                <span>Descubra os lançamentos</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Setas posicionadas exatamente sobre a metade esquerda (foto) -->
+    <button class="promo-arrow promo-arrow-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
+      <i class="bi bi-arrow-left"></i>
+    </button>
+    <button class="promo-arrow promo-arrow-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
+      <i class="bi bi-arrow-right"></i>
+    </button>
+
+    <!-- Bolinhas indicadoras centralizadas na parte inferior da foto -->
+    <div class="carousel-indicators promo-indicators">
+      <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+      <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="3"></button>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Marcas Parceiras -->
+  <section class="section-brands py-5">
+    <div class="container-fluid px-lg-5">
+      <div class="text-uppercase tracking-wider text-muted fw-semibold text-xs mb-4">
+        GRANDES NOMES E INFINITAS POSSIBILIDADES.
+      </div>
+      <div class="brands-wrapper d-flex flex-wrap justify-content-between align-items-center gap-4">
+        <span class="brand-item brand-yamaha">YAMAHA</span>
+        <span class="brand-item brand-fender">Fender</span>
+        <span class="brand-item brand-roland">Roland</span>
+        <span class="brand-item brand-casio">CASIO</span>
+        <span class="brand-item brand-audiotechnica">audio-technica</span>
+        <span class="brand-item brand-shure">SHURE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Sobre Nós -->
+  <section class="section-about py-5">
+    <div class="container-fluid px-lg-5">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5">
+          <div class="about-img-frame">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" alt="Nossa loja e instrumentos" class="img-fluid rounded-1 shadow-sm w-100">
+          </div>
+        </div>
+        
+        <div class="col-lg-7 ps-lg-5">
+          <span class="sub-header-label">MAIS QUE UMA LOJA DE MÚSICA</span>
+          <h2 class="about-title mt-2 mb-4">A gente entende o que você sente.</h2>
+          <p class="about-text text-muted mb-5">
+            Há 18 anos, aproximamos pessoas e instrumentos. Aqui, cada escolha passa por quem toca, ouve e vive a música. Porque um bom instrumento não é só uma compra, é o começo da sua história.
+          </p>
+
+          <div class="row g-4 mb-5">
+            <div class="col-4">
+              <div class="stat-number">18</div>
+              <div class="stat-label">anos de música</div>
+            </div>
+            <div class="col-4">
+              <div class="stat-number">12 mil+</div>
+              <div class="stat-label">histórias iniciadas</div>
+            </div>
+            <div class="col-4">
+              <div class="stat-number">4,9/5</div>
+              <div class="stat-label">na voz dos clientes</div>
+            </div>
+          </div>
+
+          <a href="/informacoes/atendimento" class="btn btn-outline-dark rounded-0 px-4 py-3 d-inline-flex align-items-center gap-3"><span>Conheça a Mestre André Store</span><i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Avaliações / Depoimentos -->
+  <section class="section-testimonials py-5">
+    <div class="container-fluid px-lg-5">
+      <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <h2 class="section-heading m-0">Experiências que inspiram.</h2>
+        <div class="d-flex align-items-center gap-2">
+          <div class="text-warning">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <span class="text-xs fw-semibold text-muted">4.9 de 5 - 1.254 avaliações</span>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="testimonial-card p-4 h-100">
+            <div class="text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-text mb-4">
+              "O P-225 chegou impecável. A equipe me ajudou a escolher sem pressa. Virou meu momento favorito do dia."
+            </p>
+            <div class="testimonial-author">
+              <div class="fw-bold fs-14">Matheus Vilela <span class="badge bg-light text-success border ms-1"><i class="bi bi-patch-check-fill"></i> Depoimento ilustrativo</span></div>
+              <div class="text-muted text-xs">Piano digital Yamaha P-225</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="testimonial-card p-4 h-100">
+            <div class="text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-text mb-4">
+              "A Stratocaster Player superou todas as expectativas. Regulagem perfeita direto da caixa e entrega ultra rápida!"
+            </p>
+            <div class="testimonial-author">
+              <div class="fw-bold fs-14">Lucas Athayde <span class="badge bg-light text-success border ms-1"><i class="bi bi-patch-check-fill"></i> Depoimento ilustrativo</span></div>
+              <div class="text-muted text-xs">Fender Player Stratocaster</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="testimonial-card p-4 h-100">
+            <div class="text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-text mb-4">
+              "O atendimento me tirou todas as dúvidas sobre o fone de referência para mixagem. Chegou no prazo com nota e garantia."
+            </p>
+            <div class="testimonial-author">
+              <div class="fw-bold fs-14">Renata Santos <span class="badge bg-light text-success border ms-1"><i class="bi bi-patch-check-fill"></i> Depoimento ilustrativo</span></div>
+              <div class="text-muted text-xs">Audio-Technica ATH-M50X</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divisor de Teclas de Piano Interativo (Full Width) -->
+  </main>
+<%- include('../partials/footer') %>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

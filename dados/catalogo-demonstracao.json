@@ -1,0 +1,514 @@
+{
+  "tipo": "dados de demonstração",
+  "aviso": "Marcas e modelos reais. Preços, estoque e imagens são ilustrativos; não representam ofertas comerciais verificadas.",
+  "categorias": [
+    {
+      "nome": "Pianos e Teclados",
+      "descricao": "Pianos digitais, sintetizadores e teclados para todos os níveis."
+    },
+    {
+      "nome": "Guitarras",
+      "descricao": "Guitarras elétricas e componentes para diferentes estilos musicais."
+    },
+    {
+      "nome": "Violões",
+      "descricao": "Violões de cordas de nylon ou aço para estudo e palco."
+    },
+    {
+      "nome": "Contrabaixos",
+      "descricao": "Baixos elétricos para estúdio e apresentações."
+    },
+    {
+      "nome": "Baterias e Percussão",
+      "descricao": "Baterias acústicas e eletrônicas e acessórios de percussão."
+    },
+    {
+      "nome": "Microfones",
+      "descricao": "Microfones para voz, palco, podcast e estúdio."
+    },
+    {
+      "nome": "Áudio e Interfaces",
+      "descricao": "Interfaces USB, monitoramento e equipamentos de áudio."
+    },
+    {
+      "nome": "Acessórios",
+      "descricao": "Encordoamentos, pedais, metrônomos e acessórios musicais."
+    }
+  ],
+  "marcas": [
+    "Yamaha",
+    "Roland",
+    "Casio",
+    "Fender",
+    "Ibanez",
+    "Shure",
+    "Audio-Technica",
+    "Focusrite",
+    "D’Addario",
+    "Ernie Ball",
+    "BOSS",
+    "Korg"
+  ],
+  "produtos": [
+    {
+      "nome": "Yamaha P-145",
+      "modelo": "P-145",
+      "marca": "Yamaha",
+      "categoria": "Pianos e Teclados",
+      "valor": 3699,
+      "estoque": 8,
+      "nivel": "Iniciante",
+      "cor": "Preto",
+      "descricao": "Piano digital compacto com ação de martelos, indicado para estudo e prática diária.",
+      "imagem": "demo-yamaha-p-145-1.svg",
+      "imagens": [
+        "demo-yamaha-p-145-1.svg",
+        "demo-yamaha-p-145-2.svg"
+      ],
+      "especificacoes": {
+        "Teclado": "88 teclas com mecanismo GHC (Graded Hammer Compact)",
+        "Polifonia máxima": "64 notas",
+        "Timbres": "10 vozes",
+        "Conectividade": "USB to Host e saída para fones",
+        "Pedal": "Entrada para pedal de sustentação"
+      }
+    },
+    {
+      "nome": "Roland FP-10",
+      "modelo": "FP-10",
+      "marca": "Roland",
+      "categoria": "Pianos e Teclados",
+      "valor": 4249,
+      "estoque": 5,
+      "nivel": "Iniciante / Intermediário",
+      "cor": "Preto",
+      "descricao": "Piano digital portátil com teclado PHA-4 Standard e motor de piano SuperNATURAL.",
+      "imagem": "demo-roland-fp-10-1.svg",
+      "imagens": [
+        "demo-roland-fp-10-1.svg",
+        "demo-roland-fp-10-2.svg"
+      ],
+      "especificacoes": {
+        "Teclas": "88, mecanismo PHA-4 Standard",
+        "Gerador de som": "SuperNATURAL Piano",
+        "Polifonia máxima": "96 vozes",
+        "Funções": "Twin Piano e metrônomo",
+        "Alimentação": "Adaptador AC"
+      }
+    },
+    {
+      "nome": "Casio Casiotone CT-S300",
+      "modelo": "CT-S300",
+      "marca": "Casio",
+      "categoria": "Pianos e Teclados",
+      "valor": 1199,
+      "estoque": 13,
+      "nivel": "Iniciante",
+      "cor": "Preto",
+      "descricao": "Teclado portátil de 61 teclas sensitivas, ideal para estudo e lazer.",
+      "imagem": "demo-casio-casiotone-ct-s300-1.svg",
+      "imagens": [
+        "demo-casio-casiotone-ct-s300-1.svg",
+        "demo-casio-casiotone-ct-s300-2.svg"
+      ],
+      "especificacoes": {
+        "Teclas": "61 com sensibilidade ao toque",
+        "Polifonia máxima": "48 notas",
+        "Timbres": "400 timbres",
+        "Ritmos": "77 ritmos",
+        "Conectividade": "USB micro B"
+      }
+    },
+    {
+      "nome": "Yamaha PSR-E383",
+      "modelo": "PSR-E383",
+      "marca": "Yamaha",
+      "categoria": "Pianos e Teclados",
+      "valor": 1699,
+      "estoque": 10,
+      "nivel": "Iniciante",
+      "cor": "Preto",
+      "descricao": "Teclado portátil versátil com recursos de aprendizagem e acompanhamentos automáticos.",
+      "imagem": "demo-yamaha-psr-e383-1.svg",
+      "imagens": [
+        "demo-yamaha-psr-e383-1.svg",
+        "demo-yamaha-psr-e383-2.svg"
+      ],
+      "especificacoes": {
+        "Teclas": "61 teclas sensitivas",
+        "Timbres": "650 vozes",
+        "Estilos": "260 estilos de acompanhamento",
+        "Funções": "Lição Keys to Success",
+        "Conectividade": "USB to Host"
+      }
+    },
+    {
+      "nome": "Squier Sonic Stratocaster",
+      "modelo": "Sonic Stratocaster",
+      "marca": "Fender",
+      "categoria": "Guitarras",
+      "valor": 1999,
+      "estoque": 7,
+      "nivel": "Iniciante",
+      "cor": "Preto",
+      "descricao": "Guitarra elétrica estilo Stratocaster com três captadores single-coil.",
+      "imagem": "demo-squier-sonic-stratocaster-1.svg",
+      "imagens": [
+        "demo-squier-sonic-stratocaster-1.svg",
+        "demo-squier-sonic-stratocaster-2.svg"
+      ],
+      "especificacoes": {
+        "Cordas": "6",
+        "Corpo": "Poplar (álamo)",
+        "Captadores": "3 single-coil",
+        "Escala": "25,5 polegadas",
+        "Trastes": "21"
+      }
+    },
+    {
+      "nome": "Ibanez GRX70QA",
+      "modelo": "GRX70QA",
+      "marca": "Ibanez",
+      "categoria": "Guitarras",
+      "valor": 1949,
+      "estoque": 6,
+      "nivel": "Iniciante / Intermediário",
+      "cor": "Transparent Blue Burst",
+      "descricao": "Guitarra elétrica da série GIO com configuração de captadores H-S-H.",
+      "imagem": "demo-ibanez-grx70qa-1.svg",
+      "imagens": [
+        "demo-ibanez-grx70qa-1.svg",
+        "demo-ibanez-grx70qa-2.svg"
+      ],
+      "especificacoes": {
+        "Cordas": "6",
+        "Captadores": "H-S-H",
+        "Trastes": "22",
+        "Braço": "Maple (bordo)",
+        "Ponte": "Tremolo"
+      }
+    },
+    {
+      "nome": "Yamaha C40",
+      "modelo": "C40",
+      "marca": "Yamaha",
+      "categoria": "Violões",
+      "valor": 989,
+      "estoque": 9,
+      "nivel": "Iniciante",
+      "cor": "Natural",
+      "descricao": "Violão clássico de tamanho padrão, com cordas de náilon e timbre suave.",
+      "imagem": "demo-yamaha-c40-1.svg",
+      "imagens": [
+        "demo-yamaha-c40-1.svg",
+        "demo-yamaha-c40-2.svg"
+      ],
+      "especificacoes": {
+        "Tipo": "Clássico acústico",
+        "Cordas": "6 de náilon",
+        "Escala": "650 mm",
+        "Tampo": "Spruce (abeto)",
+        "Tamanho": "4/4"
+      }
+    },
+    {
+      "nome": "Yamaha FG800",
+      "modelo": "FG800",
+      "marca": "Yamaha",
+      "categoria": "Violões",
+      "valor": 2199,
+      "estoque": 5,
+      "nivel": "Intermediário",
+      "cor": "Natural",
+      "descricao": "Violão folk acústico com cordas de aço e tampo sólido de spruce.",
+      "imagem": "demo-yamaha-fg800-1.svg",
+      "imagens": [
+        "demo-yamaha-fg800-1.svg",
+        "demo-yamaha-fg800-2.svg"
+      ],
+      "especificacoes": {
+        "Tipo": "Folk acústico",
+        "Cordas": "6 de aço",
+        "Tampo": "Solid spruce (abeto maciço)",
+        "Escala": "650 mm",
+        "Formato": "Traditional Western"
+      }
+    },
+    {
+      "nome": "Yamaha TRBX174",
+      "modelo": "TRBX174",
+      "marca": "Yamaha",
+      "categoria": "Contrabaixos",
+      "valor": 2199,
+      "estoque": 6,
+      "nivel": "Iniciante / Intermediário",
+      "cor": "Preto",
+      "descricao": "Contrabaixo elétrico de quatro cordas para estudos, ensaios e apresentações.",
+      "imagem": "demo-yamaha-trbx174-1.svg",
+      "imagens": [
+        "demo-yamaha-trbx174-1.svg",
+        "demo-yamaha-trbx174-2.svg"
+      ],
+      "especificacoes": {
+        "Cordas": "4",
+        "Trastes": "24",
+        "Escala": "34 polegadas",
+        "Captadores": "P/J",
+        "Controles": "Volumes e tonalidade"
+      }
+    },
+    {
+      "nome": "Squier Affinity Precision Bass PJ",
+      "modelo": "Affinity Precision Bass PJ",
+      "marca": "Fender",
+      "categoria": "Contrabaixos",
+      "valor": 3199,
+      "estoque": 4,
+      "nivel": "Intermediário",
+      "cor": "Preto",
+      "descricao": "Contrabaixo com combinação de captadores Precision e Jazz.",
+      "imagem": "demo-squier-affinity-precision-bass-pj-1.svg",
+      "imagens": [
+        "demo-squier-affinity-precision-bass-pj-1.svg",
+        "demo-squier-affinity-precision-bass-pj-2.svg"
+      ],
+      "especificacoes": {
+        "Cordas": "4",
+        "Escala": "34 polegadas",
+        "Captadores": "Split single-coil Precision + single-coil Jazz",
+        "Trastes": "20",
+        "Ponte": "4 saddles"
+      }
+    },
+    {
+      "nome": "Yamaha Stage Custom Birch",
+      "modelo": "Stage Custom Birch",
+      "marca": "Yamaha",
+      "categoria": "Baterias e Percussão",
+      "valor": 7899,
+      "estoque": 3,
+      "nivel": "Intermediário / Avançado",
+      "cor": "Natural Wood",
+      "descricao": "Bateria acústica com cascos de birch, indicada para palco e estúdio.",
+      "imagem": "demo-yamaha-stage-custom-birch-1.svg",
+      "imagens": [
+        "demo-yamaha-stage-custom-birch-1.svg",
+        "demo-yamaha-stage-custom-birch-2.svg"
+      ],
+      "especificacoes": {
+        "Tipo": "Acústica",
+        "Cascos": "Birch (bétula)",
+        "Configuração": "Conjunto de 5 tambores",
+        "Ferragens": "Conforme configuração de venda",
+        "Pratos": "Não inclusos neste cadastro"
+      }
+    },
+    {
+      "nome": "Roland TD-07DMK",
+      "modelo": "TD-07DMK",
+      "marca": "Roland",
+      "categoria": "Baterias e Percussão",
+      "valor": 8799,
+      "estoque": 4,
+      "nivel": "Iniciante / Intermediário",
+      "cor": "Preto",
+      "descricao": "Bateria eletrônica V-Drums com pads mesh para prática com fones.",
+      "imagem": "demo-roland-td-07dmk-1.svg",
+      "imagens": [
+        "demo-roland-td-07dmk-1.svg",
+        "demo-roland-td-07dmk-2.svg"
+      ],
+      "especificacoes": {
+        "Tipo": "Eletrônica",
+        "Módulo": "TD-07",
+        "Caixa": "Pad mesh",
+        "Pratos": "Pads eletrônicos",
+        "Conexão": "Saída para fones"
+      }
+    },
+    {
+      "nome": "Shure SM58-LC",
+      "modelo": "SM58-LC",
+      "marca": "Shure",
+      "categoria": "Microfones",
+      "valor": 1049,
+      "estoque": 15,
+      "nivel": "Profissional",
+      "cor": "Preto e prata",
+      "descricao": "Microfone vocal dinâmico cardioide com conexão XLR.",
+      "imagem": "demo-shure-sm58-lc-1.svg",
+      "imagens": [
+        "demo-shure-sm58-lc-1.svg",
+        "demo-shure-sm58-lc-2.svg"
+      ],
+      "especificacoes": {
+        "Tipo": "Dinâmico",
+        "Padrão polar": "Cardioide",
+        "Resposta de frequência": "50 Hz a 15 kHz",
+        "Conexão": "XLR 3 pinos",
+        "Chave liga/desliga": "Não"
+      }
+    },
+    {
+      "nome": "Audio-Technica AT2020",
+      "modelo": "AT2020",
+      "marca": "Audio-Technica",
+      "categoria": "Microfones",
+      "valor": 1299,
+      "estoque": 8,
+      "nivel": "Intermediário / Profissional",
+      "cor": "Preto",
+      "descricao": "Microfone condensador de diafragma lateral voltado a gravações.",
+      "imagem": "demo-audio-technica-at2020-1.svg",
+      "imagens": [
+        "demo-audio-technica-at2020-1.svg",
+        "demo-audio-technica-at2020-2.svg"
+      ],
+      "especificacoes": {
+        "Tipo": "Condensador",
+        "Padrão polar": "Cardioide",
+        "Conexão": "XLR",
+        "Alimentação": "Phantom power 48 V",
+        "Uso": "Estúdio e gravação"
+      }
+    },
+    {
+      "nome": "Focusrite Scarlett Solo 4ª geração",
+      "modelo": "Scarlett Solo 4th Gen",
+      "marca": "Focusrite",
+      "categoria": "Áudio e Interfaces",
+      "valor": 1449,
+      "estoque": 7,
+      "nivel": "Intermediário",
+      "cor": "Vermelho",
+      "descricao": "Interface USB de áudio compacta com entrada de instrumento e pré-amplificador de microfone.",
+      "imagem": "demo-focusrite-scarlett-solo-4a-geracao-1.svg",
+      "imagens": [
+        "demo-focusrite-scarlett-solo-4a-geracao-1.svg",
+        "demo-focusrite-scarlett-solo-4a-geracao-2.svg"
+      ],
+      "especificacoes": {
+        "Entradas": "1 microfone + 1 instrumento",
+        "Saídas": "2 saídas de linha",
+        "Conexão ao computador": "USB-C",
+        "Resolução máxima": "24-bit / 192 kHz",
+        "Alimentação": "USB"
+      }
+    },
+    {
+      "nome": "Audio-Technica ATH-M50x",
+      "modelo": "ATH-M50x",
+      "marca": "Audio-Technica",
+      "categoria": "Áudio e Interfaces",
+      "valor": 1299,
+      "estoque": 11,
+      "nivel": "Intermediário / Profissional",
+      "cor": "Preto",
+      "descricao": "Fone de ouvido monitor fechado para gravação, edição e escuta.",
+      "imagem": "demo-audio-technica-ath-m50x-1.svg",
+      "imagens": [
+        "demo-audio-technica-ath-m50x-1.svg",
+        "demo-audio-technica-ath-m50x-2.svg"
+      ],
+      "especificacoes": {
+        "Tipo": "Over-ear fechado",
+        "Drivers": "45 mm",
+        "Impedância": "38 ohms",
+        "Cabos": "Destacáveis",
+        "Uso": "Monitoramento"
+      }
+    },
+    {
+      "nome": "D’Addario EJ16 Phosphor Bronze 012–053",
+      "modelo": "EJ16",
+      "marca": "D’Addario",
+      "categoria": "Acessórios",
+      "valor": 89.9,
+      "estoque": 32,
+      "nivel": "Todos",
+      "cor": "Bronze",
+      "descricao": "Encordoamento light para violão de aço, tensão 012–053.",
+      "imagem": "demo-daddario-ej16-phosphor-bronze-012053-1.svg",
+      "imagens": [
+        "demo-daddario-ej16-phosphor-bronze-012053-1.svg",
+        "demo-daddario-ej16-phosphor-bronze-012053-2.svg"
+      ],
+      "especificacoes": {
+        "Instrumento": "Violão com cordas de aço",
+        "Material": "Phosphor Bronze",
+        "Calibres": ".012–.053",
+        "Quantidade": "6 cordas",
+        "Tensão": "Light"
+      }
+    },
+    {
+      "nome": "Ernie Ball Regular Slinky 10–46",
+      "modelo": "2221",
+      "marca": "Ernie Ball",
+      "categoria": "Acessórios",
+      "valor": 69.9,
+      "estoque": 35,
+      "nivel": "Todos",
+      "cor": "Níquel",
+      "descricao": "Encordoamento de seis cordas para guitarra elétrica, calibre 010–046.",
+      "imagem": "demo-ernie-ball-regular-slinky-1046-1.svg",
+      "imagens": [
+        "demo-ernie-ball-regular-slinky-1046-1.svg",
+        "demo-ernie-ball-regular-slinky-1046-2.svg"
+      ],
+      "especificacoes": {
+        "Instrumento": "Guitarra elétrica",
+        "Material": "Nickel wound",
+        "Calibres": ".010–.046",
+        "Quantidade": "6 cordas",
+        "Linha": "Regular Slinky"
+      }
+    },
+    {
+      "nome": "BOSS DS-1 Distortion",
+      "modelo": "DS-1",
+      "marca": "BOSS",
+      "categoria": "Acessórios",
+      "valor": 649,
+      "estoque": 12,
+      "nivel": "Todos",
+      "cor": "Laranja",
+      "descricao": "Pedal de distorção clássico para guitarra elétrica.",
+      "imagem": "demo-boss-ds-1-distortion-1.svg",
+      "imagens": [
+        "demo-boss-ds-1-distortion-1.svg",
+        "demo-boss-ds-1-distortion-2.svg"
+      ],
+      "especificacoes": {
+        "Tipo": "Pedal de efeito",
+        "Efeito": "Distorção",
+        "Controles": "Tone, Level e Distortion",
+        "Alimentação": "Bateria 9 V ou fonte compatível (vendida à parte)",
+        "Conexões": "Entrada e saída P10"
+      }
+    },
+    {
+      "nome": "Korg MA-2 Metrônomo",
+      "modelo": "MA-2",
+      "marca": "Korg",
+      "categoria": "Acessórios",
+      "valor": 199,
+      "estoque": 18,
+      "nivel": "Todos",
+      "cor": "Preto",
+      "descricao": "Metrônomo digital portátil para exercícios de tempo e estudo musical.",
+      "imagem": "demo-korg-ma-2-metronomo-1.svg",
+      "imagens": [
+        "demo-korg-ma-2-metronomo-1.svg",
+        "demo-korg-ma-2-metronomo-2.svg"
+      ],
+      "especificacoes": {
+        "Tipo": "Metrônomo digital",
+        "Recursos": "Tempo, batidas e variações rítmicas",
+        "Visor": "LCD",
+        "Alimentação": "Pilhas AAA",
+        "Uso": "Prática musical"
+      }
+    }
+  ]
+}

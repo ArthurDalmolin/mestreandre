@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Instrumentos & Sons</title>
+
+    <!-- Fontes do Google: Playfair Display (Serifada elegante) e Inter (Sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* ==========================================================================
+           >>> COLOQUE O LINK OU O CAMINHO DA SUA IMAGEM DE FUNDO AQUI ABAIXO: <<<
+           ==========================================================================
+           Exemplo local:  url('cadastro.jpg')
+           Exemplo web:    url('https://seusite.com/guitarra.jpg')
+        ========================================================================== */
+        :root {
+            --bg-guitarra: url('https://images.unsplash.com/photo-1550985616-10810253b84d?auto=format&fit=crop&w=1920&q=80');
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0c0b;
+            background-image: var(--bg-guitarra);
+            background-size: cover;
+            /* Na imagem original, a guitarra fica destacada à esquerda e o form à direita */
+            background-position: left center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+
+        .font-serif-custom {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        /* Estilo dos campos com borda fina avermelhada/vinho escura */
+        .custom-field {
+            background-color: rgba(14, 13, 13, 0.85);
+            border: 1px solid #73131c;
+            color: #d1d5db;
+            transition: all 0.25s ease;
+        }
+
+        .custom-field:focus {
+            outline: none;
+            border-color: #a81c2b;
+            box-shadow: 0 0 0 2px rgba(168, 28, 43, 0.35);
+            background-color: rgba(20, 15, 15, 0.95);
+        }
+
+        .custom-field::placeholder {
+            color: #8b929a;
+            font-size: 0.875rem;
+        }
+
+        /* Botão do Google com fundo vinho escuro */
+        .btn-google {
+            background-color: #73121b;
+            transition: background-color 0.2s ease, transform 0.15s ease;
+        }
+        .btn-google:hover {
+            background-color: #881621;
+            transform: translateY(-1px);
+        }
+
+        /* Botões de ícones com contorno vinho */
+        .btn-social-outline {
+            border: 1px solid #73131c;
+            background-color: rgba(14, 13, 13, 0.6);
+            transition: all 0.2s ease;
+        }
+        .btn-social-outline:hover {
+            border-color: #a81c2b;
+            background-color: rgba(115, 18, 27, 0.25);
+            transform: translateY(-1px);
+        }
+
+        /* Botão de envio "Entrar" */
+        .btn-submit {
+            background-color: #73121b;
+            transition: all 0.2s ease;
+        }
+        .btn-submit:hover {
+            background-color: #8d1622;
+            box-shadow: 0 4px 14px rgba(115, 18, 27, 0.45);
+        }
+        .btn-submit:active {
+            transform: scale(0.98);
+        }
+
+        /* Checkbox personalizado */
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 1.15rem;
+            height: 1.15rem;
+            border: 1px solid #73131c;
+            background-color: rgba(14, 13, 13, 0.7);
+            border-radius: 3px;
+            cursor: pointer;
+            display: inline-grid;
+            place-content: center;
+            transition: all 0.2s ease;
+        }
+        .custom-checkbox:checked {
+            background-color: #73121b;
+            border-color: #a81c2b;
+        }
+        .custom-checkbox:checked::before {
+            content: "";
+            width: 0.45rem;
+            height: 0.25rem;
+            border-left: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            transform: rotate(-45deg) translate(1px, -1px);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-end min-h-screen p-4 sm:p-8 md:p-12 lg:pr-24">
+
+    <!-- Container do Formulário (posicionado à direita, como na imagem) -->
+    <main class="w-full max-w-[560px] bg-black/40 backdrop-blur-sm sm:backdrop-blur-none sm:bg-transparent rounded-2xl p-6 sm:p-8 text-white">
+
+        <!-- Título Superior -->
+        <h1 class="font-serif-custom text-2xl sm:text-[34px] leading-tight font-normal text-gray-100 tracking-wide mb-6">
+            Olá! Seja muito bem-vindo(a)!
+        </h1>
+
+        <!-- Botões de Acesso Social -->
+        <div class="flex items-center gap-3 sm:gap-4 mb-6">
+            
+            <!-- Botão: Siga com google -->
+            <button type="button" class="btn-google flex-1 flex items-center justify-center gap-2.5 py-2.5 px-4 rounded-md text-xs sm:text-sm font-serif-custom tracking-wide shadow-md">
+                <!-- Ícone Google Colorido -->
+                <svg class="w-4 h-4 bg-white rounded-full p-0.5" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                </svg>
+                <span class="text-white">Siga com google</span>
+            </button>
+
+            <!-- Botão: Facebook -->
+            <button type="button" aria-label="Entrar com Facebook" class="btn-social-outline w-16 sm:w-20 h-10 flex items-center justify-center rounded-md text-gray-300">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+            </button>
+
+            <!-- Botão: Telefone -->
+            <button type="button" aria-label="Entrar com Telefone" class="btn-social-outline w-16 sm:w-20 h-10 flex items-center justify-center rounded-md text-gray-300">
+                <svg class="w-4 h-4 fill-none stroke-current" stroke-width="1.8" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Divisor com "ou" -->
+        <div class="relative flex items-center justify-center my-6">
+            <div class="flex-grow border-t border-[#73131c]"></div>
+            <span class="flex-shrink mx-4 text-xs font-serif-custom text-[#a81c2b] lowercase">ou</span>
+            <div class="flex-grow border-t border-[#73131c]"></div>
+        </div>
+
+        <!-- Formulário Principal em Grid de 2 Colunas -->
+        <form id="signupForm" class="space-y-5" onsubmit="event.preventDefault(); handleCadastro();">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5">
+                
+                <!-- Campo: Nome -->
+                <div class="space-y-2">
+                    <label for="name" class="block text-xs sm:text-sm text-gray-300 font-light">Nome</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        placeholder="Nome" 
+                        required
+                        class="custom-field w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-md"
+                    />
+                </div>
+
+                <!-- Campo: E-mail -->
+                <div class="space-y-2">
+                    <label for="email" class="block text-xs sm:text-sm text-gray-300 font-light">E-mail</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        placeholder="E-mail" 
+                        required
+                        class="custom-field w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-md"
+                    />
+                </div>
+
+                <!-- Campo: Senha -->
+                <div class="space-y-2">
+                    <label for="password" class="block text-xs sm:text-sm text-gray-300 font-light">Senha</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        placeholder="Senha" 
+                        required
+                        class="custom-field w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-md"
+                    />
+                </div>
+
+                <!-- Campo: Confirmar Senha -->
+                <div class="space-y-2">
+                    <label for="confirmPassword" class="block text-xs sm:text-sm text-gray-300 font-light">Confirmar senha</label>
+                    <input 
+                        type="password" 
+                        id="confirmPassword" 
+                        placeholder="Senha" 
+                        required
+                        class="custom-field w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-md"
+                    />
+                </div>
+            </div>
+
+            <!-- Termos de Privacidade e Botão -->
+            <div class="pt-4 space-y-5 flex flex-col items-center">
+                
+                <!-- Checkbox Aceite -->
+                <label class="flex items-center gap-3 cursor-pointer text-xs sm:text-[13px] text-gray-300 font-light select-none">
+                    <input type="checkbox" id="terms" required class="custom-checkbox" />
+                    <span>Aceito termos de <a href="#termos" class="underline underline-offset-2 hover:text-white transition-colors">privacidade e segurança</a></span>
+                </label>
+
+                <!-- Botão Enviar / Entrar -->
+                <button 
+                    type="submit" 
+                    class="btn-submit w-32 py-2 px-6 rounded-md text-xs sm:text-sm font-medium tracking-wide text-white shadow-md">
+                    Entrar
+                </button>
+            </div>
+
+            <!-- Caixa de Notificação / Feedback Sem Alert -->
+            <div id="statusMessage" class="hidden text-center text-xs py-2 px-3 rounded-md transition-all"></div>
+        </form>
+
+    </main>
+
+    <!-- Script de Validação e Interação -->
+    <script>
+        function handleCadastro() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const pass = document.getElementById('password').value;
+            const confirmPass = document.getElementById('confirmPassword').value;
+            const terms = document.getElementById('terms').checked;
+            const msg = document.getElementById('statusMessage');
+
+            // Validação de correspondência de senha
+            if (pass !== confirmPass) {
+                msg.textContent = 'As senhas não coincidem. Verifique e tente novamente.';
+                msg.className = 'text-center text-xs py-2 px-3 rounded-md bg-red-950/80 border border-red-800 text-red-200 block';
+                return;
+            }
+
+            if (!terms) {
+                msg.textContent = 'Por favor, aceite os termos de privacidade para prosseguir.';
+                msg.className = 'text-center text-xs py-2 px-3 rounded-md bg-amber-950/80 border border-amber-800 text-amber-200 block';
+                return;
+            }
+
+            // Simulação de cadastro com sucesso
+            msg.textContent = `Cadastro concluído com sucesso! Bem-vindo(a), ${name}.`;
+            msg.className = 'text-center text-xs py-2 px-3 rounded-md bg-emerald-950/80 border border-emerald-800 text-emerald-200 block';
+
+            setTimeout(() => {
+                msg.textContent = 'Redirecionando para o painel principal...';
+            }, 1800);
+        }
+    </script>
+</body>
+</html>

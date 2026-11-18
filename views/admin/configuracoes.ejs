@@ -1,0 +1,7 @@
+<%- include('partials/header') %><%- include('partials/menu') %>
+<main class="admin-main"><h1 class="h3 mb-4">Configurações do administrador</h1>
+<div class="card p-4" style="max-width:540px"><h2 class="h5">E-mail de acesso ao painel</h2><p>Use este e-mail com sua senha administrativa na página comum de login da loja.</p>
+<% if(erro){ %><p class="alert alert-danger"><%= erro %></p><% } %>
+<% if(sucesso){ %><p class="alert alert-success"><%= sucesso %></p><% } %>
+<form method="post" action="/admin/configuracoes"><label class="form-label d-block">E-mail<input type="email" name="email" value="<%= email %>" class="form-control" required></label><label class="form-label d-block mt-3">Confirme a senha administrativa<input type="password" name="senha" class="form-control" required></label><button class="btn btn-dark mt-3">Salvar e-mail</button></form></div>
+</main></div><%- include('partials/footer') %>

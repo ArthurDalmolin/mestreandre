@@ -1,0 +1,41 @@
+<header class="site-header sticky-top">
+  <nav class="navbar top-bar py-3" aria-label="Navegação principal">
+    <div class="site-header-grid container-fluid px-3 px-lg-5">
+      <a class="navbar-brand text-white fw-bold brand-logo" href="/inicial" title="Ir à página inicial">Mestre André Store</a>
+      <form class="header-search-wrap position-relative" action="/catalogo" method="get" role="search">
+        <div class="input-group search-pill"><span class="input-group-text bg-transparent border-end-0 ps-3"><i class="bi bi-search text-muted"></i></span><input type="search" class="form-control border-start-0 ps-2" id="campoBusca" name="busca" value="<%= (typeof filtros!=='undefined' && filtros.busca) || (typeof busca!=='undefined' ? busca : '') %>" placeholder="Qual instrumento faz parte da sua história?" autocomplete="off" aria-label="Pesquisar instrumentos e acessórios"></div>
+        <div id="listaResultadosBusca" class="search-dropdown-box d-none"><% produtosBusca.forEach(p=>{ %><a href="/produto/<%= p.id %>" class="search-result-item d-none" data-nome="<%= p.nome %>" data-marca="<%= p.marca||'' %>"><img src="<%= imagemUrl(p.imagem) %>" onerror="this.onerror=null;this.src='<%= imagemReserva(p.categoria) %>'" alt="" class="search-result-img"><div class="search-result-info"><span class="search-result-brand"><%= p.marca||'' %></span><p class="search-result-title"><%= p.nome %></p></div><span class="search-result-price"><%= formatarValor(p.valor) %></span></a><% }) %><div id="msgSemResultado" class="p-3 text-center text-muted small d-none">Nenhum produto encontrado na prévia. Pesquise no catálogo.</div><button type="submit" class="btn btn-outline-dark w-100 rounded-0">Ver resultados no catálogo</button></div>
+      </form>
+      <div class="user-actions d-flex align-items-center justify-content-end gap-2 gap-xl-3 text-white">
+        <a href="/inicial" class="header-link" title="Início"><i class="bi bi-house fs-5"></i><span class="d-none d-xl-inline">Início</span></a>
+        <% if(adminAtual){ %>
+        <a href="/admin/index" class="header-link" title="Painel administrativo"><i class="bi bi-speedometer2 fs-5"></i><span class="d-none d-lg-inline">Administração</span></a>
+        <form method="post" action="/admin/sair" class="m-0"><button type="submit" class="header-logout-btn">Sair</button></form>
+        <% }else if(usuarioAtual){ %>
+        <a href="/minha-conta" class="header-link" title="Minha conta"><i class="bi bi-person fs-5"></i><span class="d-none d-xl-inline">Minha conta</span></a><a href="/carrinho/confirmacao" class="header-link header-account-small" title="Ver meus pedidos">Pedidos</a>
+        <a href="/sair" class="header-link header-account-small" title="Sair da conta">Sair</a>
+        <% }else{ %>
+        <a href="/login" class="header-link" title="Entrar"><i class="bi bi-person fs-5"></i><span>Entrar</span></a>
+        <a href="/cadastro" class="header-signup-link">Cadastrar</a>
+        <% } %>
+        <a href="/favoritos" class="header-link position-relative" aria-label="Favoritos"><i class="bi bi-heart fs-5"></i><span class="wishlist-badge"><%= quantidadeFavoritos %></span></a>
+        <a href="/carrinho" class="header-link position-relative" aria-label="Sacola de compras"><i class="bi bi-handbag fs-5"></i><span class="d-none d-xl-inline">Sacola</span><span class="cart-badge"><%= quantidadeSacola %></span></a>
+      </div>
+    </div>
+  </nav>
+  <div class="sub-nav border-top border-secondary border-opacity-25">
+    <nav class="container-fluid px-3 px-lg-5 nav-categories" aria-label="Categorias e atalhos">
+      <a href="/boas-vindas">Comece por aqui</a>
+      <a href="/catalogo">Todos os instrumentos</a>
+      <details class="nav-categories-details">
+        <summary>Categorias <i class="bi bi-chevron-down" aria-hidden="true"></i></summary>
+        <div class="nav-categories-menu">
+          <% categoriasMenu.forEach(c=>{ %>
+            <a href="/catalogo?categoria=<%= encodeURIComponent(c.nome) %>"><%= c.nome %></a>
+          <% }) %>
+        </div>
+      </details>
+    </nav>
+  </div>
+</header>
+<script src="/js/site-nav.js" defer></script>

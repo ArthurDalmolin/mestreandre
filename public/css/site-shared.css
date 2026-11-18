@@ -1,0 +1,84 @@
+/* Cabeçalho e rodapé unificados para todas as páginas públicas */
+:root{--font-serif:'Playfair Display',Georgia,serif;--bg-darker:#0b0b0b;--color-bordeaux:#75282d}
+body{margin:0!important;overflow-x:hidden;font-family:'Plus Jakarta Sans',sans-serif}
+.site-header{background:#0b0b0b;z-index:1030;width:100%;color:white}.site-header a{text-decoration:none}
+.brand-logo{font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;letter-spacing:-.02em;color:white!important}
+.site-header .header-link{font-size:.85rem;position:relative;color:white!important;display:inline-flex;align-items:center;gap:7px}.site-header .header-link:hover{opacity:.78}
+.site-header .search-pill{border-radius:7px;background:white;overflow:hidden}.site-header .search-pill .form-control,.site-header .search-pill .input-group-text{border-color:#ddd;background:white;color:#222}
+.site-header .wishlist-badge,.site-header .cart-badge{background:#75282d;color:#fff;font-size:.67rem;font-weight:700;padding:2px 6px;border-radius:10px;position:absolute;top:-8px;right:-8px}
+.site-header .subnav-link{color:#aaa;font-size:.82rem;font-weight:500;padding:.4rem .6rem}.site-header .subnav-link:hover{color:#fff}
+.site-header .search-dropdown-box{position:absolute;top:calc(100% + 5px);left:0;right:0;background:#fff;color:#222;max-height:340px;overflow-y:auto;box-shadow:0 10px 25px #0004;z-index:1050}
+.search-dropdown-box.d-none,.search-result-item.d-none{display:none!important}.search-dropdown-box .search-result-item{display:flex;align-items:center;gap:12px;border-bottom:1px solid #eee;padding:8px 12px;color:#111!important;font-size:12px}
+.search-result-img{width:50px;height:50px;object-fit:contain}.search-result-info{flex:1}.search-result-brand{color:#999;font-size:11px}.search-result-title{margin:0}.search-result-price{font-weight:700;color:#75282d}
+.piano-divider{width:100%;height:70px;overflow:hidden;background:#1e1e1e;user-select:none;touch-action:manipulation}
+.piano-keys{display:flex!important;height:100%!important;width:100%;background:transparent!important;border:0!important}
+.piano-keys .white{flex:1;min-width:0;display:block;position:relative;background:#f8f8f8;border-right:1px solid #ccc;cursor:pointer;height:100%;transition:background .08s}
+.piano-keys .black{position:absolute;right:-8px;top:0;width:16px;height:65%;background:#161616;z-index:5;border-radius:0 0 3px 3px;box-shadow:1px 2px 4px #0005;cursor:pointer}
+.piano-keys .white.pressed{background:#ccc}.piano-keys .black.pressed{background:#666}.piano-keys .white:hover{background:#eee}.piano-keys .black:hover{background:#333}
+.site-footer{background:#0b0b0b!important;color:white!important;width:100%!important;position:static!important;left:auto!important;right:auto!important;margin:0!important;padding:48px 0!important}
+.site-footer .footer-eyebrow{font-size:.7rem;letter-spacing:.2em;color:#aaa}.site-footer .footer-title{font-family:'Playfair Display',Georgia,serif;font-size:1.8rem}.site-footer .newsletter-input{background:#222;color:white;border:1px solid #444}.site-footer .newsletter-input::placeholder{color:#aaa}.site-footer .btn-newsletter{background:white;color:black;font-weight:600}.site-footer a{color:#aaa;text-decoration:none}.site-footer a:hover{color:white}
+@media(max-width:700px){.site-header .header-search-wrap{order:3;max-width:none!important;width:100%;flex-basis:100%;margin:0!important}.site-header .user-actions{margin-left:auto}.site-header .sub-nav .nav{gap:2px;justify-content:center!important}.site-header .subnav-link{font-size:.7rem;padding:5px}.piano-divider{height:55px}.piano-keys .black{right:-5px;width:10px}}
+/* V4: cabeçalho central, rodapé sem bordas laterais nem espaço vazio */
+html{height:auto;min-height:100%;}
+body{display:flex;flex-direction:column;min-height:100vh;width:100%;margin:0!important;padding:0!important;overflow-x:hidden}
+body>main{flex:1 0 auto}
+.site-header,.site-footer,.piano-divider{box-sizing:border-box;width:100%!important;max-width:none!important;margin-left:0!important;margin-right:0!important;left:auto!important;right:auto!important}
+.site-footer{position:static!important;margin-top:0!important;margin-bottom:0!important;align-self:stretch;flex-shrink:0;padding:48px 0!important}
+.piano-divider{position:relative!important;margin-top:auto!important;align-self:stretch;flex-shrink:0}
+.site-header-grid{display:grid!important;grid-template-columns:minmax(170px,1fr) minmax(275px,510px) minmax(260px,1fr);align-items:center;column-gap:22px;width:100%}
+.site-header-grid>.brand-logo{justify-self:start;min-width:0;margin:0!important}
+.site-header-grid>.header-search-wrap{justify-self:center;width:100%;max-width:510px!important;margin:0!important;min-width:0}
+.site-header-grid>.user-actions{justify-self:end;min-width:0;white-space:nowrap;margin:0!important}
+.header-signup-link{color:#fff!important;border:1px solid #b68c8f;border-radius:3px;padding:7px 11px;font-size:.8rem;text-decoration:none!important}
+.header-signup-link:hover{background:#75282d;color:#fff!important}
+.header-account-small{font-size:.75rem!important}
+@media(max-width:1150px){.site-header-grid{grid-template-columns:minmax(140px,1fr) minmax(220px,450px) minmax(200px,1fr);gap:14px}.brand-logo{font-size:1.15rem}}
+@media(max-width:850px){.site-header-grid{grid-template-columns:minmax(0,1fr) auto;row-gap:13px}.site-header-grid>.brand-logo{grid-row:1;grid-column:1}.site-header-grid>.user-actions{grid-row:1;grid-column:2;gap:10px!important}.site-header-grid>.header-search-wrap{grid-row:2;grid-column:1/-1;width:min(100%,580px)!important;max-width:580px!important}.header-signup-link{padding:5px 7px}.site-header .subnav-link{font-size:.7rem;padding:.3rem}}
+@media(max-width:530px){.brand-logo{font-size:1rem!important}.user-actions .header-link{font-size:.74rem}.header-signup-link{font-size:.7rem}}
+
+/* Correção V5: elimina deslocamento horizontal e espaço extra no fim da página. */
+html,body{margin:0!important;padding:0!important;max-width:100%;}
+body{min-height:100vh!important;display:flex!important;flex-direction:column!important}
+body>.home-main{flex:1 0 auto;width:100%;min-width:0}
+body>.piano-divider{margin:0!important;position:relative!important;left:auto!important;right:auto!important;flex:none}
+body>.site-footer{margin:0!important;padding:48px 0!important;width:100%!important;max-width:100%!important;left:auto!important;right:auto!important;position:static!important;transform:none!important;flex:none;box-sizing:border-box}
+body>.site-footer>.container-fluid{width:100%;max-width:100%;margin:0 auto}
+
+/* V6: barra de pesquisa menor sem sobrepor os links. */
+.site-header-grid{grid-template-columns:minmax(190px,1fr) minmax(205px,320px) minmax(360px,1fr)!important;gap:20px!important}
+.site-header-grid>.header-search-wrap{width:100%!important;max-width:320px!important;z-index:1040}
+.site-header-grid>.user-actions{gap:14px!important;justify-self:end}
+.site-header .search-pill .form-control{font-size:12px;min-width:0}
+.nav-categories{display:flex;align-items:center;justify-content:center;gap:26px;min-height:42px;flex-wrap:wrap}
+.nav-categories>a,.nav-categories summary{color:#ddd;font-size:13px;text-decoration:none;padding:10px 0;cursor:pointer}
+.nav-categories a:hover,.nav-categories summary:hover{color:white}
+.nav-categories-details{position:relative}
+.nav-categories-details summary{list-style:none;display:flex;align-items:center;gap:8px}
+.nav-categories-details summary::-webkit-details-marker{display:none}
+.nav-categories-details[open] summary .bi-chevron-down{transform:rotate(180deg)}
+.nav-categories-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);z-index:1050;min-width:220px;max-height:350px;overflow:auto;background:#141414;border:1px solid #3b3b3b;border-radius:6px;box-shadow:0 18px 26px #0005;padding:10px;display:flex;flex-direction:column}
+.nav-categories-menu a{color:white!important;display:block;padding:9px 12px;text-decoration:none;font-size:13px;border-radius:4px}
+.nav-categories-menu a:hover{background:#75282d}
+.home-category-details{border-top:1px solid #e5e2dc;padding:12px 0 0}
+.home-category-details>summary{width:fit-content;cursor:pointer;list-style:none;display:flex;align-items:center;gap:14px;background:#790610;color:white;border-radius:5px;padding:12px 21px;font-size:14px;font-weight:600}
+.home-category-details>summary::-webkit-details-marker{display:none}
+.home-category-details[open]>summary .bi-chevron-down{transform:rotate(180deg)}
+.whatsapp-float{position:fixed;bottom:22px;right:22px;z-index:1100;background:#25d366;color:white!important;display:flex;gap:8px;align-items:center;padding:12px 17px;border-radius:50px;text-decoration:none!important;font-weight:700;font-size:14px;box-shadow:0 7px 22px #0005}
+.whatsapp-float:hover{background:#178b43;transform:translateY(-2px)}
+.whatsapp-float .bi{font-size:24px;line-height:1}
+@media(max-width:1199px){.site-header-grid{grid-template-columns:minmax(170px,1fr) auto!important;row-gap:12px!important}.site-header-grid>.brand-logo{grid-column:1;grid-row:1}.site-header-grid>.user-actions{grid-column:2;grid-row:1}.site-header-grid>.header-search-wrap{grid-column:1/-1;grid-row:2;width:min(100%,350px)!important;max-width:350px!important;justify-self:center}}
+@media(max-width:620px){.site-header-grid>.user-actions{gap:7px!important}.site-header-grid>.header-search-wrap{width:100%!important;max-width:360px!important}.site-header .brand-logo{font-size:1rem!important}.header-signup-link{padding:5px!important}.nav-categories{gap:16px}.nav-categories-menu{left:auto;right:0;transform:none}.whatsapp-float span{display:none}.whatsapp-float{width:54px;height:54px;border-radius:50%;padding:0;justify-content:center}}
+
+.site-header .header-logout-btn{background:transparent;color:white;border:1px solid #444;border-radius:4px;padding:6px 10px;font-size:12px;cursor:pointer}
+.site-header .header-logout-btn:hover{background:#75282d}
+/* Mensagem do prêmio musical no piano do rodapé. */
+.piano-premio-fundo{position:fixed;inset:0;background:rgba(0,0,0,.74);z-index:100000;display:flex;align-items:center;justify-content:center;padding:16px}
+.piano-premio-caixa{position:relative;width:min(100%,460px);border-radius:15px;background:#faf8f3;text-align:center;color:#201c1b;padding:36px 25px;box-shadow:0 24px 80px #0009;font-family:Arial,sans-serif}
+.piano-premio-caixa h2{font-family:Georgia,serif;color:#710510;font-size:1.75rem;margin:8px 0 15px}
+.piano-premio-caixa p{font-size:1rem;line-height:1.6}
+.piano-premio-icone{font-size:3.3rem;display:block}
+.piano-premio-fechar{position:absolute;right:12px;top:10px;border:0;background:transparent;font-size:1.75rem;color:#555;cursor:pointer}
+.piano-premio-codigo{border:2px dashed #800713;border-radius:8px;background:white;color:#800713;font-size:1.6rem;font-weight:800;letter-spacing:.13em;padding:14px;margin:20px 0 13px}
+.piano-premio-copiar,.piano-premio-ver{display:inline-block;border:0;border-radius:7px;padding:11px 16px;background:#750610;color:white;text-decoration:none;font-weight:700;cursor:pointer;margin:4px}
+.piano-premio-ver{background:#242322}
+.piano-premio-caixa small{display:block;margin-top:18px;color:#625b53;line-height:1.4}

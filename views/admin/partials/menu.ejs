@@ -1,0 +1,21 @@
+<div class="admin-workspace">
+  <aside class="admin-sidebar" aria-label="Menu administrativo">
+    <div class="admin-sidebar-brand"><span class="admin-brand-icon"><i class="bi bi-music-note-beamed" aria-hidden="true"></i></span><span><strong>Mestre André</strong><small>PAINEL DE CONTROLE</small></span></div>
+    <p class="admin-nav-label">GERENCIAMENTO</p>
+    <nav class="admin-side-links" aria-label="Seções administrativas">
+      <a href="/admin/index" class="<%= adminPath==='/admin/index'?'is-active':'' %>"><i class="bi bi-grid-1x2"></i><span>Visão geral</span></a>
+      <a href="/admin/produtos" class="<%= adminPath.startsWith('/admin/produtos')?'is-active':'' %>"><i class="bi bi-box-seam"></i><span>Produtos</span></a>
+      <a href="/admin/marcas" class="<%= adminPath.startsWith('/admin/marcas')?'is-active':'' %>"><i class="bi bi-tags"></i><span>Marcas</span></a>
+      <a href="/admin/categorias" class="<%= adminPath.startsWith('/admin/categorias')?'is-active':'' %>"><i class="bi bi-collection"></i><span>Categorias</span></a>
+      <a href="/admin/pedidos" class="<%= adminPath.startsWith('/admin/pedidos')?'is-active':'' %>"><i class="bi bi-bag-check"></i><span>Pedidos</span></a>
+      <a href="/admin/configuracoes" class="<%= adminPath==='/admin/configuracoes'?'is-active':'' %>"><i class="bi bi-gear"></i><span>Configurações</span></a>
+      <a href="/admin/fretes" class="<%= adminPath.startsWith('/admin/fretes')?'is-active':'' %>"><i class="bi bi-truck"></i><span>Consultas de frete</span></a>
+    </nav>
+    <p class="admin-nav-label admin-nav-label-quick">ACESSO RÁPIDO</p>
+    <nav class="admin-side-links" aria-label="Ações rápidas">
+      <a href="/admin/produtos/form-cadastrar"><i class="bi bi-plus-circle"></i><span>Novo produto</span></a>
+      <a href="/admin/marcas/cadastrar"><i class="bi bi-plus-circle"></i><span>Nova marca</span></a>
+      <a href="/admin/categorias/form-cadastrar"><i class="bi bi-plus-circle"></i><span>Nova categoria</span></a>
+    </nav>
+    <div class="admin-side-bottom"><a href="/inicial"><i class="bi bi-arrow-up-right-square"></i> Visualizar loja</a><form method="post" action="/admin/sair"><button type="submit"><i class="bi bi-box-arrow-right"></i> Sair do admin</button></form></div>
+  </aside>

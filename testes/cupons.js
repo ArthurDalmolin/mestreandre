@@ -1,0 +1,20 @@
+const assert = require('assert');
+const { FRETE, MUSICA, NOTAS_MUSICA, resumo } = require('../util/cupons');
+
+const req = { session: {} };
+assert.strictEqual(resumo(req, 2700).freteGratis, false);
+req.session.cupomFrete = FRETE;
+assert.strictEqual(resumo(req, 2699.99).freteGratis, false);
+assert.strictEqual(resumo(req, 2699.99).faltamFrete, 0.01);
+assert.strictEqual(resumo(req, 2700).freteGratis, true);
+assert.strictEqual(resumo(req, 2700).totalFinal, 2700);
+req.session.cupomDesconto = MUSICA;
+assert.strictEqual(resumo(req, 3000).desconto, 0, 'sem música liberada não há desconto');
+req.session.musicaLiberada = true;
+assert.strictEqual(resumo(req, 2700).desconto, 270);
+assert.strictEqual(resumo(req, 2700).totalFinal, 2430);
+assert.strictEqual(resumo(req, 2890.47).desconto, 289.05);
+assert.strictEqual(resumo(req, 2890.47).totalFinal, 2601.42);
+assert.strictEqual(resumo(req, 2700).freteGratis, true, 'desconto não retira elegibilidade de frete');
+assert.deepStrictEqual(NOTAS_MUSICA, ['D4','D4','G4','G4','G4','A4','A4','B4']);
+console.log('OK: todos os testes de regras dos cupons passaram.');

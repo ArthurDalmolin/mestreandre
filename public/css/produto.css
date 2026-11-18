@@ -1,0 +1,203 @@
+:root {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --color-bordeaux: #751f28;
+  --color-bordeaux-hover: #5d171e;
+  --bg-soft-gray: #f0f0f0;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #1a1a1a;
+  background-color: #ffffff;
+}
+
+.text-xs { font-size: 0.78rem; }
+.fs-14 { font-size: 0.875rem; }
+
+/* Barra de Pesquisa do Topo */
+.search-pill .form-control {
+  border-radius: 0 50px 50px 0;
+  font-size: 0.82rem;
+  background-color: #f7f7f7;
+  border-color: #e5e5e5;
+}
+.search-pill .input-group-text {
+  border-radius: 50px 0 0 50px;
+  background-color: #f7f7f7;
+  border-color: #e5e5e5;
+}
+
+/* Galeria de Fotos */
+.main-image-viewport {
+  background-color: var(--bg-soft-gray);
+  height: 480px;
+  overflow: hidden;
+  padding: 2.5rem;
+}
+
+.main-img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail-strip .thumb-box {
+  width: 90px;
+  height: 70px;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: border-color 0.2s;
+}
+
+.thumbnail-strip .thumb-box img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.thumbnail-strip .thumb-box.active {
+  border-color: #111;
+}
+
+/* Tipografia de Títulos */
+.product-title, .product-model {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.product-lead-text {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  max-width: 440px;
+}
+
+.product-price-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.color-bullet {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+/* Controles de Quantidade e Compra */
+.qty-selector {
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  width: 110px;
+}
+
+.btn-qty {
+  border: none;
+  background: transparent;
+  padding: 6px 12px;
+  font-weight: bold;
+}
+
+.btn-bordeaux-add {
+  background-color: var(--color-bordeaux);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.88rem;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-bordeaux-add:hover {
+  background-color: var(--color-bordeaux-hover);
+  color: #fff;
+}
+
+.btn-wishlist-pill {
+  border: 1px solid #e0e0e0;
+  background: transparent;
+  color: #333;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-wishlist-pill:hover {
+  background-color: #fafafa;
+}
+
+/* Abas Inferiores */
+.product-nav-tabs .nav-link {
+  border: none;
+  color: #888;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0 0 8px 0;
+  background: transparent;
+}
+
+.product-nav-tabs .nav-link.active {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+
+.specs-section-title {
+  font-family: var(--font-sans);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.specs-preview-box {
+  background-color: var(--bg-soft-gray);
+  height: 220px;
+}
+
+.specs-preview-box img {
+  max-height: 160px;
+  object-fit: contain;
+}
+
+.specs-desc-text {
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+/* Avaliações */
+.reviewer-avatar {
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.review-quote {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Rodapé */
+.footer-col-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-link, .footer-social-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-link:hover, .footer-social-link:hover {
+  color: #fff;
+}
